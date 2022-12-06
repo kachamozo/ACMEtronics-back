@@ -1,5 +1,5 @@
 {
-    "category": [
+    "categories": [
     {
     "id":1,
     "name": "Headphones"
@@ -18,10 +18,10 @@
     },
     {
     "id": 5,
-    "name": "laptops"
+    "name": "Laptops"
     },
     {
     "id": 6,
-    "name": "smartphones"
+    "name": "Smartphones"
     }
     ]}
