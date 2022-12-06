@@ -9,7 +9,7 @@
 			"price": 908,
 			"stock": 94,
 			"rating": 4.69,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"image": "https://m.media-amazon.com/images/I/61FZC+6hDFL._AC_SL1500_.jpg"
 		},
 		{
@@ -21,7 +21,7 @@
 			"price": 249,
 			"stock": 34,
 			"rating": 4.44,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://m.media-amazon.com/images/I/61xa10dafvL._AC_SL1100_.jpg"
 		},
 		{
@@ -33,7 +33,7 @@
 			"price": 1.189,
 			"stock": 36,
 			"rating": 4.09,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://m.media-amazon.com/images/I/71M4DO4SeoL._AC_SL1280_.jpg"
 		},
 		{
@@ -45,7 +45,7 @@
 			"price": 175,
 			"stock": 32,
 			"rating": 4.09,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://m.media-amazon.com/images/I/61XM1qbUPUL._AC_SL1000_.jpg"
 		},
 		{
@@ -57,7 +57,7 @@
 			"price": 454,
 			"stock": 30,
 			"rating": 4.01,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://http2.mlstatic.com/D_NQ_NP_974187-MLV52436619734_112022-O.webp"
 		},
 		{
@@ -69,7 +69,7 @@
 			"price": 1440,
 			"stock": 38,
 			"rating": 4.07,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://http2.mlstatic.com/D_NQ_NP_650271-MLV47534099487_092021-O.webp"
 		},
 		{
@@ -81,7 +81,7 @@
 			"price": 341,
 			"stock": 34,
 			"rating": 4.02,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://http2.mlstatic.com/D_NQ_NP_755679-MLV46528024024_062021-O.webp"
 		},
 		{
@@ -93,7 +93,7 @@
 			"price": 416,
 			"stock": 40,
 			"rating": 4.11,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://http2.mlstatic.com/D_NQ_NP_991013-MLV51294611292_082022-O.webp"
 		},
 		{
@@ -105,7 +105,7 @@
 			"price": 2400,
 			"stock": 42,
 			"rating": 4.7,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://http2.mlstatic.com/D_NQ_NP_725885-MLV51817560144_102022-O.webp"
 		},
 		{
@@ -117,7 +117,7 @@
 			"price": 280,
 			"stock": 35,
 			"rating": 4.12,
-			"category": "smartphones",
+			"category": "Smartphones",
 			"images": "https://http2.mlstatic.com/D_NQ_NP_664898-MLV49512628783_032022-O.webp"
 		},
 		{
@@ -128,7 +128,7 @@
 			"rating": 3.27,
 			"stock": 123,
 			"brand": "HP",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://http2.mlstatic.com/D_NQ_NP_744343-MLA51520574552_092022-O.webp"
 		},
 		{
@@ -139,7 +139,7 @@
 			"rating": 4.57,
 			"stock": 83,
 			"brand": "APPle",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://i.dummyjson.com/data/products/6/thumbnail.png"
 		},
 		{
@@ -150,7 +150,7 @@
 			"rating": 4.25,
 			"stock": 50,
 			"brand": "Samsung",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
 		},
 		{
@@ -161,7 +161,7 @@
 			"rating": 4.43,
 			"stock": 68,
 			"brand": "Microsoft Surface",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
 		},
 		{
@@ -172,7 +172,7 @@
 			"rating": 4.54,
 			"stock": 96,
 			"brand": "Infinix",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
 		},
 		{
@@ -183,7 +183,7 @@
 			"rating": 4.43,
 			"stock": 89,
 			"brand": "HP Pavilion",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
 		},
 		{
@@ -194,7 +194,7 @@
 			"rating": 3.0,
 			"stock": 50,
 			"brand": "Samsung",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://m.media-amazon.com/images/I/61M-QNJf4pL._AC_SX466_.jpg"
 		},
 		{
@@ -205,7 +205,7 @@
 			"rating": 3.7,
 			"stock": 80,
 			"brand": "Lenovo",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://m.media-amazon.com/images/I/61QGMX0Qy6L._AC_SX679_.jpg"
 		},
 		{
@@ -216,7 +216,7 @@
 			"rating": 2.5,
 			"stock": 69,
 			"brand": "Asus",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://m.media-amazon.com/images/I/713WJz2wXLL._AC_SX679_.jpg"
 		},
 		{
@@ -227,7 +227,7 @@
 			"rating": 4.3,
 			"stock": 140,
 			"brand": "Asus",
-			"category": "laptops",
+			"category": "Laptops",
 			"image": "https://m.media-amazon.com/images/I/71GKXeMFy-L._AC_SX679_.jpg"
 		},
 		{

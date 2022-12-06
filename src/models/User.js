@@ -26,5 +26,6 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-    });
+    },{timestamps: true,
+        paranoid: true,});
 };
