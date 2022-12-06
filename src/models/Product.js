@@ -15,5 +15,34 @@ module.exports = (sequelize) => {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-	});
+		description: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		brand: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		os: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		price: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		stock: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		rating: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		image: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+	},{timestamps: true,
+	paranoid: true,});
 };
