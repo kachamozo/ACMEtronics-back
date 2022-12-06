@@ -18,8 +18,8 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 require('dotenv').config();
-const server = require('./src/conexion/app.js');
-const { conn } = require('./src/conexion/db.js');
+const server = require('./src/connection/app.js');
+const { conn } = require('./src/connection/db.js');
 
 // Syncing all the Models at once
 conn.sync({ force: false }).then(() => {
