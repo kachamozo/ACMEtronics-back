@@ -8,39 +8,40 @@ module.exports = (sequelize) => {
 	sequelize.define('product', {
 		id: {
             type: DataTypes.INTEGER,
-            primaryKey: true
+            primaryKey: true,
+			allownull: false,
         },
 		name: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allownull: false,
 		},
 		description: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allownull: false,
 		},
 		brand: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allownull: false,
 		},
 		os: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allownull: false,
 		},
 		price: {
 			type: DataTypes.INTEGER,
-			allowNull: false,
+			allownull: false,
 		},
 		stock: {
 			type: DataTypes.INTEGER,
-			allowNull: false,
+			allownull: false,
 		},
 		rating: {
 			type: DataTypes.INTEGER,
-			allowNull: false,
+			allownull: false,
 		},
 		image: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allownull: false,
 		},
 	},{timestamps: true,
 	paranoid: true,});
