@@ -18,12 +18,10 @@ module.exports = (sequelize) => {
 		description: {
 			type: DataTypes.STRING,
 			allownull: false,
+			varchar: 255,
+			
 		},
 		brand: {
-			type: DataTypes.STRING,
-			allownull: false,
-		},
-		os: {
 			type: DataTypes.STRING,
 			allownull: false,
 		},
@@ -43,6 +41,5 @@ module.exports = (sequelize) => {
 			type: DataTypes.STRING,
 			allownull: false,
 		},
-	},{timestamps: true,
-	paranoid: true,});
+	},{timestamps: false});
 };

@@ -5,7 +5,6 @@
 			"title": "iPhone 13 Pro Max",
 			"description": "An ultra-wide angle sensor of 12 megapixels and an angle of 120 °; An improved 12-megapixel telephoto lens also with X3 Optical Zoom and optical stabilization.",
 			"brand": "Apple",
-			"OS": "iOS",
 			"price": 908,
 			"stock": 94,
 			"rating": 4.69,
@@ -17,108 +16,99 @@
 			"title": "iPhone X",
 			"description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
 			"brand": "Apple",
-			"OS": "iOS",
 			"price": 249,
 			"stock": 34,
 			"rating": 4.44,
 			"category": "Smartphones",
-			"images": "https://m.media-amazon.com/images/I/61xa10dafvL._AC_SL1100_.jpg"
+			"image": "https://m.media-amazon.com/images/I/61xa10dafvL._AC_SL1100_.jpg"
 		},
 		{
 			"id": 3,
 			"title": "Samsung Galaxy S22 Ultra",
 			"description": "It has the brightest screen on the market, an Exynos processor with an AMD GPU, brightest camera sensor",
 			"brand": "Samsung",
-			"OS": "Android",
 			"price": 1.189,
 			"stock": 36,
 			"rating": 4.09,
 			"category": "Smartphones",
-			"images": "https://m.media-amazon.com/images/I/71M4DO4SeoL._AC_SL1280_.jpg"
+			"image": "https://m.media-amazon.com/images/I/71M4DO4SeoL._AC_SL1280_.jpg"
 		},
 		{
 			"id": 4,
 			"title": "Huawei P30",
 			"description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
 			"brand": "Huawei",
-			"OS": "Android",
 			"price": 175,
 			"stock": 32,
 			"rating": 4.09,
 			"category": "Smartphones",
-			"images": "https://m.media-amazon.com/images/I/61XM1qbUPUL._AC_SL1000_.jpg"
+			"image": "https://m.media-amazon.com/images/I/61XM1qbUPUL._AC_SL1000_.jpg"
 		},
 		{
 			"id": 5,
 			"title": "Huawei P50 Pro",
 			"description": "with FHD+ resolution of 1,228 x 2,700 pixels that can be automatically adjusted to reduce (somewhat) consumption, with a refresh rate of up to 120 Hz (also automatic) and a 300 Hz touch sampling frequency..",
 			"brand": "Huawei",
-			"OS": "Android",
 			"price": 454,
 			"stock": 30,
 			"rating": 4.01,
 			"category": "Smartphones",
-			"images": "https://http2.mlstatic.com/D_NQ_NP_974187-MLV52436619734_112022-O.webp"
+			"image": "https://http2.mlstatic.com/D_NQ_NP_974187-MLV52436619734_112022-O.webp"
 		},
 		{
 			"id": 6,
 			"title": "Samsung Galaxy S21 Ultra ",
 			"description": "It has a 6.8-inch Dynamic AMOLED screen at QHD + resolution, 120 Hz refresh rate and Gorilla Glass Victus protection and inside we find the same pair of Snapdragon 888 processors.",
 			"brand": "Samsung",
-			"OS": "Android",
 			"price": 1440,
 			"stock": 38,
 			"rating": 4.07,
 			"category": "Smartphones",
-			"images": "https://http2.mlstatic.com/D_NQ_NP_650271-MLV47534099487_092021-O.webp"
+			"image": "https://http2.mlstatic.com/D_NQ_NP_650271-MLV47534099487_092021-O.webp"
 		},
 		{
 			"id": 7,
 			"title": "Xiaomi Mi 11 Lite ",
 			"description": "It has a 64 MP main sensor with a size of 1/1.97 inches and an f/1.79 aperture. The other important sensor that accompanies it is another classic: an 8 MP wide angle and f/2.2 aperture.",
 			"brand": "Xiaomi",
-			"OS": "Android",
 			"price": 341,
 			"stock": 34,
 			"rating": 4.02,
 			"category": "Smartphones",
-			"images": "https://http2.mlstatic.com/D_NQ_NP_755679-MLV46528024024_062021-O.webp"
+			"image": "https://http2.mlstatic.com/D_NQ_NP_755679-MLV46528024024_062021-O.webp"
 		},
 		{
 			"id": 8,
 			"title": "Xiaomi 12 Lite ",
 			"description": "Xiaomi 12 Lite has an AMOLED panel with FullHD+ resolution, 120 Hz refresh rate and integrated fingerprint reader under the screen, but in this case its diagonal is 6.55 inches, slightly larger than that of the Xiaomi 12 and the Xiaomi 12X.",
 			"brand": "Xiaomi",
-			"OS": "Android",
 			"price": 416,
 			"stock": 40,
 			"rating": 4.11,
 			"category": "Smartphones",
-			"images": "https://http2.mlstatic.com/D_NQ_NP_991013-MLV51294611292_082022-O.webp"
+			"image": "https://http2.mlstatic.com/D_NQ_NP_991013-MLV51294611292_082022-O.webp"
 		},
 		{
 			"id": 9,
 			"title": "iPhone Pro Max 14 ",
 			"description": "6.1-inch and 6.7-inch Super Retina XDR OLED. Storage: 128, 256 and 512 GB on iPhone 14 and 1 TB option on Pro models. Ceramic Shield: stronger than any smartphone glass. Compatibility with MagSafe accessories.",
 			"brand": "Apple",
-			"OS": "iOS",
 			"price": 2400,
 			"stock": 42,
 			"rating": 4.7,
 			"category": "Smartphones",
-			"images": "https://http2.mlstatic.com/D_NQ_NP_725885-MLV51817560144_102022-O.webp"
+			"image": "https://http2.mlstatic.com/D_NQ_NP_725885-MLV51817560144_102022-O.webp"
 		},
 		{
 			"id": 10,
-			"title": "Samsung A71 ",
+			"title": "Samsung A71",
 			"description": "The Samsung Galaxy A71 arrives to succeed the Galaxy A70 with a 6.7-inch Super AMOLED screen at FHD + resolution. Using an octa-core Snapdragon 730 processor, the Galaxy A71 features 6GB or 8GB RAM variants with 128GB of microSD expandable internal storage space.",
 			"brand": "Samsung",
-			"OS": "Android",
 			"price": 280,
 			"stock": 35,
 			"rating": 4.12,
 			"category": "Smartphones",
-			"images": "https://http2.mlstatic.com/D_NQ_NP_664898-MLV49512628783_032022-O.webp"
+			"image": "https://http2.mlstatic.com/D_NQ_NP_664898-MLV49512628783_032022-O.webp"
 		},
 		{
 			"id": 11,
@@ -235,8 +225,7 @@
 			"title": "Apple iPad pro 12.9-inch",
 			"description": "Astonishing performance. Incredibly advanced displays. Superfast wireless connectivity. Next-level Apple Pencil capabilities. Powerful new features in IpadOS. The ultimate iPad experience.",
 			"brand": "Apple",
-			"OS": "IpadOS",
-			"price": "$1099.00",
+			"price": 1099.00,
 			"stock": 20,
 			"rating": 4.5,
 			"category": "Tablets",
@@ -247,8 +236,7 @@
 			"title": "Apple iPad pro 11-inch",
 			"description": "Astonishing performance. Incredibly advanced displays. Superfast wireless connectivity. Next-level Apple Pencil capabilities. Powerful new features in IpadOS. The ultimate iPad experience.",
 			"brand": "Apple",
-			"OS": "IpadOS",
-			"price": "$799.00",
+			"price": 799.00,
 			"stock": 11,
 			"rating": 4.8,
 			"category": "Tablets",
@@ -259,8 +247,7 @@
 			"title": "Apple iPad Air",
 			"description": "iPad Air lets you immerse yourself in whatever you’re reading, watching, or creating. The 10.9-inch Liquid Retina display features advanced technologies like True Tone, P3 wide color, and an antireflective coating.",
 			"brand": "Apple",
-			"OS": "IpadOS",
-			"price": "$599.00",
+			"price": 599.00,
 			"stock": 8,
 			"rating": 4.2,
 			"category": "Tablets",
@@ -271,8 +258,7 @@
 			"title": "Apple iPad 10th generation",
 			"description": "The all-new colorful iPad for the things you do every day",
 			"brand": "Apple",
-			"OS": "IpadOS",
-			"price": "$449.00",
+			"price": 449.00,
 			"stock": 13,
 			"rating": 4.3,
 			"category": "Tablets",
@@ -283,8 +269,7 @@
 			"title": "Apple iPad mini 8.3-inch",
 			"description": "The magic of iPad in the palm of your hand.",
 			"brand": "Apple",
-			"OS": "IpadOS",
-			"price": "$499.00",
+			"price": 499.00,
 			"stock": 5,
 			"rating": 3.7,
 			"category": "Tablets",
@@ -293,10 +278,9 @@
 		{
 			"id": 26,
 			"title": "Samsung galaxy Tab S8 Ultra 14.6-inch",
-			"description": "Get lost in what you love and unleash your imagination with an ultra-large sAMOLED tablet that's the first of its kind. Your movies and content come to life in vivid detail like never before on an expansive 14.6's AMOLED screen. Now you have the power to game or edit videos in ultra-smooth clarity, thanks to a 120Hz refresh rate. You'll feel closer to the action when you hear every thrilling detail on quad speakers and rich Dolby Atmos surround sound tuned by AKG. Plus, discover new ways to boost productivity with an ultra-dynamic multi-window display that puts everything you need on one screen. With so many great capabilities, this screen simply must be experienced to be believed.",
+			"description": "Get lost in what you love and unleash your imagination with an ultra-large sAMOLED tablet that's the first of its kind. Your movies and content come to life in vivid detail like never before on an expansive 14.6's AMOLED screen. Now you have the power to game or edit videos in ultra-smooth clarity, thanks to a 120Hz refresh rate. You'll feel closer to the action when you hear every thrilling detail on quad speakers and rich Dolby Atmos surround sound tuned by AKG.",
 			"brand": "Samsung",
-			"OS": "Android 12",
-			"price": "$1449.98",
+			"price": 1449.98,
 			"stock": 8,
 			"rating": 4.4,
 			"category": "Tablets",
@@ -305,10 +289,9 @@
 		{
 			"id": 27,
 			"title": "Samsung galaxy Tab S8+",
-			"description": "Meet SAMSUNG Galaxy Tab S8+, a premium tablet that helps you get more done on the go. Whether you’re working, catching up on your favorite series on your commute or chilling with your favorite game, get it all done smoothly and quickly no matter where you are with superfast Wi-Fi 6E. Prepare to be blown away by a large, 12.4' display that gives you more out of every moment with an sAMOLED screen that delivers brilliant clarity and ultra-smooth views, even in broad daylight. Your video calls just got a big upgrade too. The large screen helps you feel closer to who you’re talking to, and a dual camera with auto framing keeps the spotlight on you. If you’re looking for a tablet that helps you level up productivity, Galaxy Tab S8+ delivers. The large display creates more space to work with the option to open and toggle multiple windows for enhanced productivity. We also made S Pen faster, so it feels more like a real pen — sketch and convert your handwriting to text and automatically sync with your Galaxy phone in Samsung Notes. You can also snap on a keyboard to work on multiple windows and apps all at once with Samsung DeX. And when it comes to power and storage, this premium tablet piles it on with an upgraded Qualcomm Snapdragon chipset and up to 256GB of storage. Samsung Kids offers a library of fun games, books, and videos that are safe, kid friendly, and parent approved. Smart Switch helps you safely move files from your new Galaxy Tab S8+, no matter what operating system you’re switching from. Expand your storage up to 1TB with a microSD card. Hold Galaxy Tab S8+ in your hands and unleash the power to do more. Wi-Fi 6E enabled router required. Sold separately. When using the included cable. Battery life may vary depending on usage patterns and other factors. MicroSD card sold separately.",
+			"description": "Meet SAMSUNG Galaxy Tab S8+, a premium tablet that helps you get more done on the go. Whether you’re working, catching up on your favorite series on your commute or chilling with your favorite game, get it all done smoothly and quickly no matter where you are with superfast Wi-Fi 6E.",
 			"brand": "Samsung",
-			"OS": "Android 12",
-			"price": "$1249.98",
+			"price": 1249.98,
 			"stock": 5,
 			"rating": 4.0,
 			"category": "Tablets",
@@ -317,10 +300,9 @@
 		{
 			"id": 28,
 			"title": "Samsung galaxy Tab S8",
-			"description": "Meet SAMSUNG Galaxy Tab S8, a top-of-the-line tablet designed to help you get more out of your day, wherever you happen to be. Take that video call for work at a coffee shop. Lose yourself in your favorite music videos at the park. Whatever you’re doing, make the day yours with an impressive but surprisingly portable 11' LCD display that’s easy on the eyes, giving you plenty of space to get things done no matter where you are. The large screen also levels up your video call experience, so you can feel closer to whoever you’re speaking to; and an ultra-wide camera with auto framing and auto zoom keeps the spotlight on you. Power through your day like never before with an updated Qualcomm Snapdragon chipset processor that packs one of Galaxy’s most powerful performances yet. And keep going strong all day long with a long-life battery that's all that, plus some. We also reduced the latency on S Pen so it feels faster, making it feel more like a real pen in your hands, so you can write and sketch your heart out. Convert your handwriting to text automatically with Samsung Notes, a note-taking app that keeps your notes in sync with your phone, thanks to seamless Galaxy connectivity. Samsung Kids offers a library of fun games, books, and videos that are safe, kid friendly, and parent approved. Smart Switch helps you safely move files from your new Galaxy Tab S8, no matter what operating system you’re switching from. Expand your storage up to 1TB with a microSD card. Galaxy Tab S8 helps you crush the day. Wi-Fi 6E enabled router required. Sold separately. When using the included cable. Battery life may vary depending on usage patterns and other factors. MicroSD card sold separately.",
+			"description": "Meet SAMSUNG Galaxy Tab S8, a top-of-the-line tablet designed to help you get more out of your day, wherever you happen to be. Take that video call for work at a coffee shop. Lose yourself in your favorite music videos at the park. Whatever you’re doing, make the day yours with an impressive but surprisingly portable 11' LCD display that’s easy on the eyes, giving you plenty of space to get things done no matter where you are.",
 			"brand": "Samsung",
-			"OS": "Android 12",
-			"price": "$1049.98",
+			"price": 1049.98,
 			"stock": 6,
 			"rating": 3.2,
 			"category": "Tablets",
@@ -331,8 +313,7 @@
 			"title": "Kindle Paperwhite (16 GB) – Now with a 6.8' display and adjustable warm light - Without Lockscreen Ads",
 			"description": "Kindle Paperwhite is thin, lightweight, and travels easily so you can enjoy your favorite books at any time. With our signature 300 ppi glare-free Paperwhite display—now 10% brighter at its max setting—you can read in any light. And now, a single battery charge via USB-C lasts up to 10 weeks. Battery life may vary depending on use.",
 			"brand": "Amazon",
-			"OS": "Amazon",
-			"price": "169.99",
+			"price": 169.99,
 			"stock": 45,
 			"rating": 5.0,
 			"category": "E-readers",
@@ -341,10 +322,9 @@
 		{
 			"id": 30,
 			"title": "Kindle Scribe (32 GB), the first Kindle for reading and writing, with a 10.2' 300 ppi Paperwhite display, includes Premium Pen",
-			"description": "With a 10.2' 300 ppi glare-free Paperwhite display, Kindle Scribe is perfect for reading and writing, even in direct sunlight. The large display gives you room to take notes and journal, and makes it easy to adjust font size and margin width for improved reading comfort. Writing on Kindle Scribe feels like writing on paper. From the natural grip of the pen in your hand, to the sound you hear when you write, Kindle Scribe’s surface is crafted for the best possible reading and writing experience",
+			"description": "With a 10.2' 300 ppi glare-free Paperwhite display, Kindle Scribe is perfect for reading and writing, even in direct sunlight. The large display gives you room to take notes and journal, and makes it easy to adjust font size and margin width for improved reading comfort.",
 			"brand": "Amazon",
-			"OS": "Amazon",
-			"price": "$390.00",
+			"price": 390.00,
 			"stock": 10,
 			"rating": 4.8,
 			"category": "E-readers",
@@ -392,7 +372,7 @@
 			"stock": 17,
 			"rating": 3.3,
 			"category": "SmartWatch",
-			"images": "https://api.lorem.space/image/watch?w=640&h=480&r=3744"
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=3744"
 		},
 		{
 			"id": 35,
@@ -403,7 +383,7 @@
 			"stock": 12,
 			"rating": 4.3,
 			"category": "SmartWatch",
-			"images": "https://api.lorem.space/image/watch?w=640&h=480&r=936"
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=936"
 		},
 		{
 			"id": 36,
@@ -414,7 +394,7 @@
 			"stock": 21,
 			"rating": 4.5,
 			"category": "SmartWatch",
-			"images": "https://api.lorem.space/image/watch?w=640&h=480&r=235"
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=235"
 		},
 		{
 			"id": 37,
@@ -425,7 +405,7 @@
 			"stock": 11,
 			"rating": 2.9,
 			"category": "SmartWatch",
-			"images": "https://api.lorem.space/image/watch?w=640&h=480&r=625"
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=625"
 		},
 		{
 			"id": 38,
@@ -436,7 +416,7 @@
 			"stock": 34,
 			"rating": 3.9,
 			"category": "SmartWatch",
-			"images": "https://api.lorem.space/image/watch?w=640&h=480&r=5116"
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=5116"
 		},
 		{
 			"id": 39,
@@ -447,7 +427,7 @@
 			"stock": 20,
 			"rating": 4.1,
 			"category": "SmartWatch",
-			"images": "https://api.lorem.space/image/watch?w=640&h=480&r=4389"
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=4389"
 		},
 		{
 			"id": 40,
@@ -458,7 +438,7 @@
 			"stock": 7,
 			"rating": 4.3,
 			"category": "SmartWatch",
-			"images": "https://api.lorem.space/image/watch?w=640&h=480&r=1224"
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=1224"
 		},
 		{
 			"id": 41,
@@ -518,7 +498,7 @@
 		{
 			"id": 46,
 			"title": "Philips A4216 Wireless Sports Headphones",
-			"description": "With Philips A4216 Wireless Sports Headphones, you never have to hold yourself back. Whether you’re sweating it out at the gym or enjoying a laid-back weekend at the beach, these Go series headphones are up to the challenge. 35 hours of playback time can power a whole week’s worth of workouts, while the built-in mic allows you to take calls on the go. The soft, breathable ear-cup cushions are specially designed for superior comfort and removable for cleaning. No matter what you do when you're wearing these headphones, you'll always be able to get them feeling fresh again! IP55 water and dust resistance also lets you exercise with peace of mind.",
+			"description": "With Philips A4216 Wireless Sports Headphones, you never have to hold yourself back. Whether you’re sweating it out at the gym or enjoying a laid-back weekend at the beach, these Go series headphones are up to the challenge. ",
 			"brand": "Philips",
 			"price": 69.99,
 			"stock": 15,
@@ -551,7 +531,7 @@
 		{
 			"id": 49,
 			"title": "JVC Black Flat and Foldable Colorful Flats On Ear Headphone",
-			"description": "The JVC HAS160 FLATS are stylish, compact headphones with a slim headband and sleek, soft ear pads that rest on the ear. The earpieces pivot so that the headphone can lie flat, making them ideal for listeners who want a lightweight, easily packable headphone, but who prefer a headband/on-the-ear style. A 30mm Neodymium driver in each earpiece allows the headphones to deliver clear, crisp sound. And the soft ear pads further enhance sound quality by providing a seal against ambient sound.",
+			"description": "The JVC HAS160 FLATS are stylish, compact headphones with a slim headband and sleek, soft ear pads that rest on the ear. The earpieces pivot so that the headphone can lie flat, making them ideal for listeners who want a lightweight, easily packable headphone, but who prefer a headband/on-the-ear style. ",
 			"brand": "JVC",
 			"price": 16.5,
 			"stock": 3,
