@@ -5,7 +5,7 @@ const {
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
     // defino el modelo
-    sequelize.define('category', {
+    sequelize.define('inventory', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
