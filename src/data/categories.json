@@ -1,27 +1,22 @@
 {
-    "categories": [
-    {
-    "id":1,
-    "name": "Headphones"
-    },
-    {
-    "id":2,
-    "name": "SmartWatch"
-    },
-    {
-    "id": 3,
-    "name": "E-readers"
-    },
-    {
-    "id": 4,
-    "name": "Tablets"
-    },
-    {
-    "id": 5,
-    "name": "Laptops"
-    },
-    {
-    "id": 6,
-    "name": "Smartphones"
-    }
-    ]}
+	"categories": [
+		{
+			"name": "Headphones"
+		},
+		{
+			"name": "SmartWatch"
+		},
+		{
+			"name": "E-readers"
+		},
+		{
+			"name": "Tablets"
+		},
+		{
+			"name": "Laptops"
+		},
+		{
+			"name": "Smartphones"
+		}
+	]
+}
