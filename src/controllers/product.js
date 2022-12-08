@@ -1,4 +1,3 @@
-//lo q  sea
 const { Op } = require("sequelize");
 const { Product } = require("../connection/db");
 const api = require("../data/products.json");
