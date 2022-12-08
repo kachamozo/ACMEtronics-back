@@ -34,11 +34,9 @@ const getProduct = async (req, res) => {
           },
         },
       });
-      console.log(nameProduct);
       res.send(nameProduct);
     } else {
       const nameProduct = await Product.findAll();
-      console.log(nameProduct);
       res.send(nameProduct);
     }
   } catch (error) {
