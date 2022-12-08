@@ -1,15 +1,20 @@
 //lo q  sea
 const { Op } = require('sequelize');
 const { Product } = require('../connection/db');
-const sarasa = require('../data/products.json');
+const api = require('../data/products.json');
 
 const saveProduct = async () => {
 	try {
-		sarasa.products.forEach(async (e) => {
+		api.products.forEach(async (e) => {
 			await Product.findOrCreate({
 				where: {
 					id: e.id,
 					name: e.title,
+					brand: e.brand,
+					price: e.price,
+					stock: e.stock,
+					rating: e.rating,
+					image: e.image,
 				},
 			});
 		});
