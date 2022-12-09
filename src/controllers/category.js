@@ -23,7 +23,7 @@ const getById = async (req, res, next) => {
 		const category = await Category.findByPk(id);
 		if (!category)
 			return res.status(404).json({ msg: 'Categoria no encontrada' });
-		res.status(200).json({ category });
+		res.status(200).json({ msg: 'Categoria encontrada', category });
 	} catch (error) {
 		next(error);
 	}
@@ -56,7 +56,7 @@ const update = async (req, res, next) => {
 		if (!category)
 			return res.status(404).json({ msg: 'Categoria no encontrada' });
 		const updatedCategory = await category.update({
-			name: name,
+			name: name || category.name,
 		});
 		if (!updatedCategory)
 			return res
@@ -98,7 +98,7 @@ const createBulk = async (req, res, next) => {
 				.json({ msg: 'No se pudo crear la lista de categorias' });
 		res
 			.status(201)
-			.json({ categories: newCategories, msg: 'Lista de categorias creadas' });
+			.json({ msg: 'Lista de categorias creadas', categories: newCategories });
 	} catch (error) {
 		next(error);
 	}

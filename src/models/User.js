@@ -6,17 +6,19 @@ module.exports = (sequelize) => {
 	sequelize.define(
 		'user',
 		{
-			id: {
-				type: DataTypes.INTEGER,
-				primaryKey: true,
+			isAdmin: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: false,
 			},
-			name: {
+			userName: {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
+
 			email: {
 				type: DataTypes.STRING,
 				allowNull: false,
+
 				validate: {
 					isEmail: true,
 				},
@@ -25,6 +27,14 @@ module.exports = (sequelize) => {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
+
+			name: DataTypes.STRING,
+			lastName: DataTypes.STRING,
+			age: DataTypes.INTEGER,
+			country: DataTypes.STRING,
+			city: DataTypes.STRING,
+			phone: DataTypes.STRING,
+			address: DataTypes.STRING,
 		},
 		{ timestamps: true, paranoid: true }
 	);
