@@ -1,51 +1,47 @@
-const { Op } = require("sequelize");
-const { Product } = require("../connection/db");
-const api = require("../data/products.json");
+const { Op } = require('sequelize');
+const { Product, Category } = require('../connection/db');
 
-const saveProduct = async () => {
-  try {
-    api.products.forEach(async (e) => {
-      await Product.findOrCreate({
-        where: {
-          id: e.id,
-          name: e.title,
-          brand: e.brand,
-          price: e.price,
-          stock: e.stock,
-          rating: e.rating,
-          image:e.image,
-        },
-      });
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
+const createBulk = async (req, res, next) => {
+	const { products, categories } = req.body;
 
-const getProduct = async (req, res) => {
-  const { name } = req.query;
-  try {
-    if (name) {
-      const nameProduct = await Product.findAll({
-        where: {
-          name: {
-            [Op.iLike]: `%${name}%`,
-          },
-        },
-      });
-      console.log(nameProduct);
-      res.send(nameProduct);
-    } else {
-      const nameProduct = await Product.findAll();
-      console.log(nameProduct);
-      res.send(nameProduct);
-    }
-  } catch (error) {
-    console.log(error);
-  }
+	try {
+		if (!products)
+			return res.status(400).json({ msg: 'Productos no provistos' });
+		if (!categories)
+			return res.status(400).json({ msg: 'Categorias no provistas' });
+
+		const newPoducts = await Product.bulkCreate(products, {
+			include: ['CategoryProduct'],
+		});
+		const newCategories = await Category.bulkCreate(categories);
+
+		if (newPoducts.length === 0 || newCategories.length === 0)
+			return res.status(200).json({
+				msg: 'No se pudo crear los productos, categorias',
+			});
+
+		newPoducts.forEach((product) => {
+			products.forEach((dataProduct) => {
+				if (product.name === dataProduct.name) {
+					dataProduct.categories.forEach((categories) => {
+						product.addCategoryProduct(categories);
+					});
+
+					//En caso de que solo tenga una unica categoria Ej: ojo tenemos que modifiacr el json de productos que las categories: 5 (integer)
+					// product.addCategoryProduct(dataProduct.categories);
+				}
+			});
+		});
+
+		res.status(201).json({
+			products: newPoducts,
+			categories: newCategories,
+		});
+	} catch (error) {
+		throw new Error(error);
+	}
 };
 
 module.exports = {
-  saveProduct,
-  getProduct,
+	createBulk,
 };
