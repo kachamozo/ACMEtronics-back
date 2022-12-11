@@ -41,7 +41,7 @@ const create = async (req, res, next) => {
 				.json({ msg: 'La categoria ya existe en la base de datos' });
 		}
 		const newCategory = await Category.create({ name });
-		res.status(201).json({ msg: 'Categoria creada', newCategory });
+		res.status(201).json({ msg: 'Categoria creada', category: newCategory });
 	} catch (error) {
 		next(error);
 	}
@@ -63,8 +63,8 @@ const update = async (req, res, next) => {
 				.status(200)
 				.json({ msg: 'No se pudo actualizar la categoria' });
 		res
-			.status(200)
-			.json({ msg: 'Categoria actualizada', categoria: updatedCategory });
+			.status(201)
+			.json({ msg: 'Categoria actualizada', category: updatedCategory });
 	} catch (error) {
 		next(error);
 	}
@@ -80,7 +80,7 @@ const deleteById = async (req, res, next) => {
 		const deleteCategory = await category.destroy();
 		if (!deleteCategory)
 			return res.status(200).json({ msg: 'No se pudo eliminar categoria' });
-		res.status(200).json({ msg: 'Categoria eliminada', category });
+		res.status(201).json({ msg: 'Categoria eliminada', category });
 	} catch (error) {
 		next(error);
 	}
@@ -91,6 +91,11 @@ const createBulk = async (req, res, next) => {
 	try {
 		if (!categories.length > 0)
 			return res.status(400).json({ msg: 'Lista de categorias no provistas' });
+
+		const { count, rows } = await Category.findAndCountAll();
+		if (count > 0)
+			return res.status(200).json({ count: count, categories: rows });
+
 		const newCategories = await Category.bulkCreate(categories);
 		if (!newCategories.length > 0)
 			return res

@@ -10,10 +10,7 @@ module.exports = (sequelize) => {
 				type: DataTypes.STRING,
 				allownull: false,
 			},
-			description: {
-				type: DataTypes.STRING(1000),
-				allownull: false,
-			},
+			description: DataTypes.STRING(2000),
 			brand: {
 				type: DataTypes.STRING,
 				allownull: false,
@@ -26,7 +23,7 @@ module.exports = (sequelize) => {
 				type: DataTypes.INTEGER,
 				allownull: false,
 			},
-			rating: DataTypes.INTEGER,
+			rating: DataTypes.FLOAT,
 			image: {
 				type: DataTypes.STRING,
 				allownull: false,
