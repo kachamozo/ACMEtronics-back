@@ -10,7 +10,7 @@ const getAll = async (req, res, next) => {
 		if (!rows.length > 0)
 			return res.status(404).json({ msg: 'Usuario no encontrado' });
 
-		res.status(200).json({ msg: { count: count, users: rows } });
+		res.status(200).json({ count: count, users: rows });
 	} catch (error) {
 		next(error);
 	}
@@ -114,7 +114,7 @@ const update = async (req, res, next) => {
 
 		if (!updateUser)
 			return res.status(200).json({ msg: 'No se pudo actualizar el usuario' });
-		res.status(200).json({ msg: 'Usuario actualizado', usuario: updateUser });
+		res.status(201).json({ msg: 'Usuario actualizado', usuario: updateUser });
 	} catch (error) {
 		next(error);
 	}
@@ -129,7 +129,7 @@ const deleteById = async (req, res, next) => {
 		const deleteUser = await user.destroy();
 		if (!deleteUser)
 			return res.status(200).json({ msg: 'No se pudo eliminar el usuario' });
-		res.status(200).json({ msg: 'Usuario eliminado', user });
+		res.status(201).json({ msg: 'Usuario eliminado', user });
 	} catch (error) {
 		next(error);
 	}
@@ -140,6 +140,10 @@ const createBulk = async (req, res, next) => {
 	try {
 		if (!users.length > 0)
 			return res.status(400).json({ msg: 'Lista de usuarios no provistas' });
+
+		const { count, rows } = await User.findAndCountAll();
+		if (count > 0) return res.status(200).json({ count: count, users: rows });
+
 		const newUsers = await User.bulkCreate(users);
 		if (!newUsers.length > 0)
 			return res

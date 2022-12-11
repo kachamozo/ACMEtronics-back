@@ -20,11 +20,10 @@
 require('dotenv').config();
 const server = require('./src/connection/app.js');
 const { conn } = require('./src/connection/db.js');
-const { saveProduct } = require('./src/controllers/product.js');
 
-// Syncing all the Models at once
-conn.sync({ force: true }).then(() => {
-	server.listen(3001, () => {
-		saveProduct(), console.log('%s listening at ' + 3001); // eslint-disable-line no-console
+// Syncing all the models at once
+conn.sync({ force: false }).then(() => {
+	server.listen(process.env.PORT || 8000, () => {
+		console.log('%s listening at ' + process.env.PORT || 8000); // eslint-disable-line no-console
 	});
 });

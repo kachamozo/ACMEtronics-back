@@ -6,20 +6,11 @@ module.exports = (sequelize) => {
 	sequelize.define(
 		'product',
 		{
-			id: {
-				type: DataTypes.INTEGER,
-				primaryKey: true,
-				allownull: false,
-			},
 			name: {
 				type: DataTypes.STRING,
 				allownull: false,
 			},
-			description: {
-				type: DataTypes.STRING,
-				allownull: false,
-				varchar: 255,
-			},
+			description: DataTypes.STRING(2000),
 			brand: {
 				type: DataTypes.STRING,
 				allownull: false,
@@ -32,15 +23,12 @@ module.exports = (sequelize) => {
 				type: DataTypes.INTEGER,
 				allownull: false,
 			},
-			rating: {
-				type: DataTypes.INTEGER,
-				allownull: false,
-			},
+			rating: DataTypes.FLOAT,
 			image: {
 				type: DataTypes.STRING,
 				allownull: false,
 			},
 		},
-		{ timestamps: false }
+		{ timestamps: true, paranoid: true }
 	);
 };
