@@ -2,7 +2,6 @@ const Stripe = require("stripe");
 const { STRIPE_SECRET_KEY } = process.env;
 require("dotenv").config();
 const stripe = new Stripe(STRIPE_SECRET_KEY);
-const { Router } = require("express");
 
 const checkout = async (req, res) => {
   const { id, amount } = req.body;
@@ -10,15 +9,20 @@ const checkout = async (req, res) => {
   try {
     const payment = await stripe.paymentIntents.create({
       amount: amount * 100,
-      currency: "usd",
+      currency: "USD",
       description: "product",
       payment_method: id,
       confirm: true,
     });
-    return res.json({
-      message: "The payment was Successful",
-      receipt_url: payment.charges.data[0].receipt_url,
-    });
+
+    if (payment.status === "succeeded") {
+      res.json({
+        message: "The payment was Successful",
+        receipt_url: payment.charges.data[0].receipt_url,
+      });
+    } else {
+      res.json({ message: "The payment was not successful" });
+    }
   } catch (error) {
     return res.json({ message: error.message });
   }
