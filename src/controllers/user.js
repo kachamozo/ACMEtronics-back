@@ -1,5 +1,7 @@
 const { Op } = require('sequelize');
 const { User } = require('../connection/db');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const getAll = async (req, res, next) => {
 	const { name } = req.query;
@@ -56,11 +58,20 @@ const create = async (req, res, next) => {
 		// 		.json({ msg: 'El usuario ya existe en la base de datos' });
 		// }
 
+		const findEmail = await User.findOne({ where: { email } });
+		if (findEmail) {
+			return res.status(200).json({ msg: 'Email ya registrado', findEmail });
+		}
+
+		// hash contraseña
+		const salt = await bcrypt.genSalt(10);
+		const passwordBcrypt = await bcrypt.hash(password, salt);
+
 		const [user, created] = await User.findOrCreate({
 			where: {
 				userName: userName,
 				email: email,
-				password: password,
+				password: passwordBcrypt,
 			},
 			defaults: {
 				name,
@@ -120,6 +131,41 @@ const update = async (req, res, next) => {
 	}
 };
 
+const login = async (req, res, next) => {
+	const { email, password } = req.body;
+
+	try {
+		if (!email)
+			return res.status(400).json({ msg: 'Email de usuario no provisto' });
+		if (!password)
+			return res.status(400).json({ msg: 'Password de usuario no provisto' });
+
+		const user = await User.findOne({ where: { email } });
+		if (!user) return res.status(400).json({ msg: 'Usuario no encontrado' });
+
+		const validPassword = await bcrypt.compare(password, user.password);
+		if (!validPassword)
+			return res.status(400).json({ msg: 'contraseña no válida' });
+
+		// create token
+		const token = jwt.sign(
+			{
+				userName: user.userName,
+				id: user.id,
+				admin: user.admin,
+			},
+			process.env.TOKEN_SECRET,
+			{ expiresIn: '1d' }
+		);
+
+		res.status(200).header('auth-token', token).json({
+			data: { token },
+		});
+	} catch (error) {
+		next(error);
+	}
+};
+
 const deleteById = async (req, res, next) => {
 	const { id } = req.params;
 	try {
@@ -160,6 +206,7 @@ module.exports = {
 	getById,
 	create,
 	update,
+	login,
 	deleteById,
 	createBulk,
 };

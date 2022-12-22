@@ -4,6 +4,7 @@ const {
 	getById,
 	create,
 	update,
+	login,
 	deleteById,
 	createBulk,
 } = require('../controllers/user');
@@ -14,6 +15,7 @@ router.get('/', getAll);
 router.get('/:id', getById);
 router.post('/', create);
 router.put('/:id', update);
+router.post('/login', login);
 router.delete('/:id', deleteById);
 router.post('/bulk', createBulk);
 
