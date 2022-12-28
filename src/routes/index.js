@@ -5,6 +5,7 @@ const user = require("./user");
 const product = require("./product");
 const favorites = require("./favorites");
 const stripe = require("./stripe");
+const login = require('./login')
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -19,5 +20,6 @@ router.use("/user", user);
 router.use("/product", product);
 router.use("/favorites", favorites);
 router.use("/stripe", stripe);
+router.use("/login", login)
 
 module.exports = router;

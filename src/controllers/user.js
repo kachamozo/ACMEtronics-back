@@ -1,68 +1,108 @@
 const { Op } = require("sequelize");
-const { User } = require("../connection/db");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const { User, Product } = require("../connection/db");
 
-const getAll = async (req, res, next) => {
+const getUser = async (req, res) => {
   const { name } = req.query;
-  try {
-    const where = name ? { name: { [Op.iLike]: `%${name}%` } } : null;
-    const { count, rows } = await User.findAndCountAll({ where });
+  let userTable = await User.findAll({
+    order: [["id", "ASC"]],
+  });
+  if (userTable.length > 1) return res.send(userTable);
+  if (userTable.length === 0) {
+    try {
+      let users = require("../data/users.json");
+      users = users.map((u) => {
+        return {
+          firstname: u.name["firstname"],
+          lastname: u.name["lastname"],
+          email: u.email,
+          username: u.username,
+          password: u.password,
+          admin: u.admin ? u.admin : false,
+        };
+      });
+      await User.bulkCreate(users);
 
-    if (!rows.length > 0)
-      return res.status(404).json({ msg: "Usuario no encontrado" });
+      userTable = await User.findAll({
+        order: [["id", "ASC"]],
+      });
 
-    res.status(200).json({ count: count, users: rows });
-  } catch (error) {
-    next(error);
+      return res.send(userTable);
+    } catch (error) {
+      // res.status(404).send(error);
+      console.log(error);
+    }
+  } else {
+    if (name) {
+      const specificUser = await Product.findAll({
+        where: {
+          name: { [Op.iLike]: `%${name}%` },
+        },
+      });
+
+      if (specificUser.length > 0) return res.status(200).send(specificUser);
+
+      return res.status(404).send("No such User");
+    }
   }
 };
 
-// const getById = async (req, res, next) => {
-//   const { id } = req.params;
-//   try {
-//     if (!id) return res.status(400).json({ msg: "Id no provisto" });
-//     const user = await User.findByPk(id);
-//     if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
-//     res.status(200).json({ msg: "Usuario encontrado", user });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
-const getById = async (req, res, next) => {
-  const token = req.headers["Authorization"];
-  try {
-    if (!token)
-      return res.status(401).json({ msg: "No se ha proporcionado un token" });
-
-    const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
-    if (!decodedToken) return res.status(401).json({ msg: "Token inválido" });
-
-    const user = await User.findOne({ where: { id: decodedToken.id } });
-    if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
-
-    res.status(200).json({ msg: "Usuario encontrado", user });
-  } catch (error) {
-    next(error);
+const getUserByID = async (req, res) => {
+  const selectedUser = await User.findOne({
+    where: {
+      id: req.params.id,
+    },
+  });
+  if (selectedUser) {
+    res.status(200).send(selectedUser);
+  } else {
+    res.sendStatus(404);
   }
 };
 
-const create = async (req, res, next) => {
+const putUser = async (req, res, next) => {
+  const { id } = req.params;
   const {
-    userName,
     email,
     password,
     name,
+    firstname,
     lastName,
-    age,
-    country,
+    street,
     city,
-    phone,
-    address,
+    number,
+    admin,
   } = req.body;
+
   try {
-    if (!userName)
+    if (!id) return res.status(400).json({ msg: "Id no provisto" });
+    const user = await User.findByPk(id);
+    if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
+
+    const updateUser = await user.update({
+      email: email,
+      password: password,
+      name: name,
+      firstname: firstname,
+      lastName: lastName,
+      street: street,
+      city: city,
+      number: number,
+      admin: admin,
+    });
+
+    if (!updateUser)
+      return res.status(200).json({ msg: "No se pudo actualizar el usuario" });
+    res.status(201).json({ msg: "Usuario actualizado", usuario: updateUser });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const postUser = async (req, res, next) => {
+  const { username,email, password, name, firstname, lastname, street, city, number } =
+    req.body;
+  try {
+    if (!username)
       return res.status(400).json({ msg: "Username de usuario no provisto" });
     if (!email)
       return res.status(400).json({ msg: "Email de usuario no provisto" });
@@ -82,23 +122,20 @@ const create = async (req, res, next) => {
     }
 
     // hash contraseña
-    const salt = await bcrypt.genSalt(10);
-    const passwordBcrypt = await bcrypt.hash(password, salt);
 
     const [user, created] = await User.findOrCreate({
       where: {
-        userName: userName,
+        username: username,
         email: email,
-        password: passwordBcrypt,
+        password: password,
       },
       defaults: {
         name,
-        lastName,
-        age,
-        country,
+        firstname,
+        lastname,
         city,
-        phone,
-        address,
+        street,
+        number,
       },
     });
 
@@ -110,179 +147,27 @@ const create = async (req, res, next) => {
   }
 };
 
-const update = async (req, res, next) => {
+const deleteUser = async (req, res) => {
   const { id } = req.params;
-  const {
-    email,
-    password,
-    name,
-    lastName,
-    age,
-    country,
-    city,
-    phone,
-    address,
-  } = req.body;
-
   try {
-    if (!id) return res.status(400).json({ msg: "Id no provisto" });
-    const user = await User.findByPk(id);
-    if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
-
-    const updateUser = await user.update({
-      email: email || user.email,
-      password: password || user.password,
-      name: name || user.name,
-      lastName: lastName || user.lastName,
-      age: age || user.age,
-      country: country || user.country,
-      city: city || user.city,
-      phone: phone || user.phone,
-      address: address || user.address,
-    });
-
-    if (!updateUser)
-      return res.status(200).json({ msg: "No se pudo actualizar el usuario" });
-    res.status(201).json({ msg: "Usuario actualizado", usuario: updateUser });
-  } catch (error) {
-    next(error);
-  }
-};
-
-const login = async (req, res, next) => {
-  const { email, password } = req.body;
-
-  try {
-    if (!email)
-      return res.status(400).json({ msg: "Email de usuario no provisto" });
-    if (!password)
-      return res.status(400).json({ msg: "Password de usuario no provisto" });
-
-    const user = await User.findOne({ where: { email } });
-    if (!user) return res.status(400).json({ msg: "Usuario no encontrado" });
-
-    const validPassword = await bcrypt.compare(password, user.password);
-    if (!validPassword)
-      return res.status(400).json({ msg: "contraseña no válida" });
-
-    // create token
-    const token = jwt.sign(
-      {
-        userName: user.userName,
-        id: user.id,
-        admin: user.admin,
+    const deletedUser = await User.findOne({
+      where: {
+        id: req.params.id,
       },
-      process.env.TOKEN_SECRET,
-      { expiresIn: "1d" }
-    );
-
-    res.status(200).header("auth-token", token).json({
-     name: user.name,
-     userName: user.userName,
-     id: user.id,
-     token
     });
-  } catch (error) {
-    next(error);
-  }
-};
+    if (!deletedUser) return 0;
+    await User.destroy({ where: { id: id } });
 
-
-const deleteById = async (req, res, next) => {
-  const { id } = req.params;
-  try {
-    if (!id) return res.status(400).json({ msg: "Id no provisto" });
-    const user = await User.findByPk(id);
-    if (!user) return res.status(404).json({ msg: "Usuario no encotrado" });
-    const deleteUser = await user.destroy();
-    if (!deleteUser)
-      return res.status(200).json({ msg: "No se pudo eliminar el usuario" });
-    res.status(201).json({ msg: "Usuario eliminado", user });
-  } catch (error) {
-    next(error);
-  }
-};
-
-// const createBulk = async (req, res, next) => {
-//   const { users } = req.body;
-//   try {
-//     if (!users.length > 0)
-//       return res.status(400).json({ msg: "Lista de usuarios no provistas" });
-
-//     const { count, rows } = await User.findAndCountAll();
-//     if (count > 0) return res.status(200).json({ count: count, users: rows });
-
-//     const newUsers = await User.bulkCreate(users);
-//     if (!newUsers.length > 0)
-//       return res
-//         .status(200)
-//         .json({ msg: "No se pudo crear la lista de usuarios" });
-//     res.status(201).json({ msg: "Lista de usuarios creadas", users: newUsers });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
-const createBulk = async (req, res, next) => {
-  const { users } = req.body;
-  try {
-    if (!users.length > 0)
-      return res.status(400).json({ msg: "Lista de usuarios no provistas" });
-
-    const { count, rows } = await User.findAndCountAll();
-    if (count > 0) return res.status(200).json({ count: count, users: rows });
-
-    const newUsers = [];
-    for (const user of users) {
-      // hash contraseña
-      const salt = await bcrypt.genSalt(10);
-      const passwordBcrypt = await bcrypt.hash(user.password, salt);
-
-      // Create the user
-      const createdUser = await User.create({
-        userName: user.userName,
-        email: user.email,
-        password: passwordBcrypt,
-        name: user.name,
-        lastName: user.lastName,
-        age: user.age,
-        country: user.country,
-        city: user.city,
-        phone: user.phone,
-        address: user.address,
-      });
-
-      // Generate the token
-      const token = jwt.sign(
-        {
-          userName: createdUser.userName,
-          id: createdUser.id,
-          admin: createdUser.admin,
-        },
-        process.env.TOKEN_SECRET,
-        { expiresIn: "1d" }
-      );
-
-      // Add the user and the token to the array
-      newUsers.push({ user: createdUser, token });
-    }
-
-    if (!newUsers.length > 0)
-      return res
-        .status(200)
-        .json({ msg: "No se pudo crear la lista de usuarios" });
-    res.status(201).json({ msg: "Lista de usuarios creadas", users: newUsers });
-  } catch (error) {
-    next(error);
+    return res.status(200).json("User deleted");
+  } catch (err) {
+    return res.status(500).send(`User could not be deleted (${err})`);
   }
 };
 
 module.exports = {
-  getAll,
-  getById,
-  create,
-  update,
-  login,
-  deleteById,
-  createBulk,
+  getUser,
+  getUserByID,
+  putUser,
+  postUser,
+  deleteUser,
 };
