@@ -56,11 +56,10 @@ const removeFavorite = async (req, res) => {
     });
     const product = await Product.findOne({ where: { id: productId } });
     await user.removeFavorites(product);
-    console.log(productId)
-   return res.status(200).send('Product deleted succesfully');
+   return res.status(200).send('Product deleted successfully');
   
   } catch (error) {
-    return res.status(400).send("The Product could not be removed from the wishlist.");
+    return res.status(400).send('Oops! the product could not be deleted. Please try again');
   }
 };
 
