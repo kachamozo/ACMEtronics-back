@@ -8,11 +8,12 @@ const {
 	deleteById,
 	createBulk,
 } = require('../controllers/user');
+const verifyToken = require("../middleware/verifyToken")
 
 const router = Router();
 
 router.get('/', getAll);
-router.get('/:id', getById);
+router.get('/:id',getById);
 router.post('/', create);
 router.put('/:id', update);
 router.post('/login', login);

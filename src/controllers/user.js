@@ -18,35 +18,35 @@ const getAll = async (req, res, next) => {
   }
 };
 
-const getById = async (req, res, next) => {
-  const { id } = req.params;
-  try {
-    if (!id) return res.status(400).json({ msg: "Id no provisto" });
-    const user = await User.findByPk(id);
-    if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
-    res.status(200).json({ msg: "Usuario encontrado", user });
-  } catch (error) {
-    next(error);
-  }
-};
-
 // const getById = async (req, res, next) => {
-//   const token = req.headers["Authorization"];
+//   const { id } = req.params;
 //   try {
-//     if (!token)
-//       return res.status(401).json({ msg: "No se ha proporcionado un token" });
-
-//     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-//     if (!decodedToken) return res.status(401).json({ msg: "Token inválido" });
-
-//     const user = await User.findByPk(decodedToken.id);
+//     if (!id) return res.status(400).json({ msg: "Id no provisto" });
+//     const user = await User.findByPk(id);
 //     if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
-
 //     res.status(200).json({ msg: "Usuario encontrado", user });
 //   } catch (error) {
 //     next(error);
 //   }
 // };
+
+const getById = async (req, res, next) => {
+  const token = req.headers["Authorization"];
+  try {
+    if (!token)
+      return res.status(401).json({ msg: "No se ha proporcionado un token" });
+
+    const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET);
+    if (!decodedToken) return res.status(401).json({ msg: "Token inválido" });
+
+    const user = await User.findOne({ where: { id: decodedToken.id } });
+    if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
+
+    res.status(200).json({ msg: "Usuario encontrado", user });
+  } catch (error) {
+    next(error);
+  }
+};
 
 const create = async (req, res, next) => {
   const {
@@ -177,12 +177,16 @@ const login = async (req, res, next) => {
     );
 
     res.status(200).header("auth-token", token).json({
-      data: { token },
+     name: user.name,
+     userName: user.userName,
+     id: user.id,
+     token
     });
   } catch (error) {
     next(error);
   }
 };
+
 
 const deleteById = async (req, res, next) => {
   const { id } = req.params;
