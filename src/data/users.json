@@ -1,108 +1,135 @@
-{
-	"users": [
-		{
-			"isAdmin": true,
-			"userName": "Admin",
-			"name": "Admin",
-			"lastName": "Admin",
-			"age": 40,
-			"email": "admin@xyz.com",
-			"password": "admin12345",
-			"country": "Argentina",
-			"city": "Buenos Aires",
-			"phone": "+54956887564",
-			"address": "23 who cares"
-		},
-		{
-			"isAdmin": false,
-			"userName": "Chelo",
-			"name": "Marcelo",
-			"lastName": "Saravia",
-			"age": 25,
-			"email": "molinito@xyz.com",
-			"password": "marce12345",
-			"country": "Argentina",
-			"city": "Cordoba",
-			"phone": "+54987564",
-			"address": "123 San Juan"
-		},
-		{
-			"isAdmin": false,
-			"userName": "Kachamozo",
-			"name": "Roly Gonzalo",
-			"lastName": "Ochoa",
-			"age": 28,
-			"email": "kachamozo@xyz.com",
-			"password": "kacha12345",
-			"country": "Bolivia",
-			"city": "La Paz",
-			"phone": "+591987564",
-			"address": "19 Paz"
-		},
-		{
-			"isAdmin": false,
-			"userName": "Yofran",
-			"name": "Yofran Jose Luis",
-			"lastName": "Garnier",
-			"age": 28,
-			"email": "yofrang@xyz.com",
-			"password": "yofran12345",
-			"country": "Venezuela",
-			"city": "Caracas",
-			"phone": "+58151987564",
-			"address": "200 Bolivar"
-		},
-		{
-			"isAdmin": false,
-			"userName": "Pau",
-			"name": "Paula Natalia",
-			"lastName": "Kunning",
-			"age": 22,
-			"email": "PaulaK@xyz.com",
-			"password": "pau12345",
-			"country": "Argentina",
-			"city": "Cordoba",
-			"phone": "+54221987564",
-			"address": "987 Corrientes"
-		},
-		{
-			"isAdmin": false,
-			"userName": "Rodri",
-			"name": "Rodrigo Damian",
-			"lastName": "Martinez",
-			"age": 20,
-			"email": "rodri@xyz.com",
-			"password": "rodri23456",
-			"country": "Argentina",
-			"city": "Buenos Aires",
-			"phone": "+54891987564",
-			"address": "1986 Palermo"
-		},
-		{
-			"isAdmin": false,
-			"userName": "Aye",
-			"name": "Ayelen",
-			"lastName": "Montenegro",
-			"age": 20,
-			"email": "Ayee@xyz.com",
-			"password": "aye12345",
-			"country": "Argentina",
-			"city": "Buenos Aires",
-			"phone": "+54781987564",
-			"address": "3040 Honduras"
-		},
-		{
-			"isAdmin": false,
-			"userName": "Juli",
-			"name": "Erika Juliana",
-			"lastName": "Pineda Botero",
-			"age": 30,
-			"email": "erikajpb@xyz.com",
-			"password": "erika12345",
-			"country": "Colombia",
-			"city": "Bogota",
-			"phone": "+5789545542",
-			"address": "25 Cartagena"
-		}
-	]
-}
+[
+    {
+        "address": {
+            "city": "Buenos Aires",
+            "street": "San Juan",
+            "number": 456
+        },
+        "id": 1,
+        "email": "admin@xyz.com",
+        "username": "Admin",
+        "password": "m39rmF$",
+        "admin": true,
+        "name": {
+            "firstname": "Admin",
+            "lastname": "Admin"
+        }
+    },
+    {
+        "address": {
+            "city": "Cordoba",
+            "street": "Av de Mayo",
+            "number": 3847
+        },
+        "id": 2,
+        "email": "molinito@xyz.com",
+        "username": "Marce",
+        "password": "marc25rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Marcelo",
+            "lastname": "Saravia"
+        }
+    },
+    {
+        "address": {
+            "city": "La paz",
+            "street": "La paz ",
+            "number": 53452
+        },
+        "id": 3,
+        "email": "kachamozo@xyz.com",
+        "username": "Kachamozo",
+        "password": "kachamozo25rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Roly",
+            "lastname": "Ochoa"
+        }
+    },
+    {
+        "address": {
+            "city": "Caracas",
+            "street": "Bolivar ",
+            "number": 23454
+        },
+        "id": 4,
+        "email": "yofran@xyz.com",
+        "username": "YoYofran",
+        "password": "Yofran25rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Yofran",
+            "lastname": "Garnier"
+        }
+    },
+    {
+        "address": {
+            "city": "Cordoba",
+            "street": "Corrientes",
+            "number": 78452
+        },
+        "id": 5,
+        "email": "paula@xyz.com",
+        "username": "Pau",
+        "password": "Pau27rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Paula",
+            "lastname": "Kunning"
+        }
+    },
+    {
+        "address": {
+            "city": "Buenos Aires",
+            "street": "Piedras",
+            "number": 65132
+        },
+        "id": 6,
+        "email": "rodrigo@xyz.com",
+        "username": "Rodri",
+        "password": "Rodrig4427rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Rodrigo",
+            "lastname": "Martinez"
+        }
+    },
+
+    {
+        "address": {
+            "city": "Buenos Aires",
+            "street": "Av Santa Fé",
+            "number": 12345
+        },
+        "id": 7,
+        "email": "ayelen@xyz.com",
+        "username": "Aye",
+        "password": "Aye4427rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Ayelen",
+            "lastname": "Montenegro"
+        }
+    },
+    {
+        "address": {
+            "city": "Bogotá",
+            "street": "Bogotá",
+            "number": 554464
+        },
+        "id": 8,
+        "email": "erika@xyz.com",
+        "username": "Eri",
+        "password": "Eri1245rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Erika",
+            "lastname": "Pineda"
+        }
+    }
+]
+		
+	
+	
+
