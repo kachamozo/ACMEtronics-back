@@ -1,9 +1,10 @@
 const { Router } = require("express");
-const { addFavorite, removeFavorite } = require("../controllers/favorites");
+const { getFavorites, addFavorite, removeFavorite } = require("../controllers/favorites");
 
 const router = Router();
 
+router.get("/", getFavorites)
 router.post("/", addFavorite);
-router.delete("/:id/:product", removeFavorite);
+router.delete("/", removeFavorite);
 
 module.exports = router;
