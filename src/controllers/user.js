@@ -1,7 +1,7 @@
 const { Op } = require("sequelize");
 const { User, Product } = require("../connection/db");
 
-const getUser = async (req, res) => {
+const getAllUsers = async (req, res) => {
   const { name } = req.query;
   let userTable = await User.findAll({
     order: [["id", "ASC"]],
@@ -28,8 +28,7 @@ const getUser = async (req, res) => {
 
       return res.send(userTable);
     } catch (error) {
-      // res.status(404).send(error);
-      console.log(error);
+      res.status(404).send(error);
     }
   } else {
     if (name) {
@@ -46,7 +45,7 @@ const getUser = async (req, res) => {
   }
 };
 
-const getUserByID = async (req, res) => {
+const getUserById = async (req, res) => {
   const selectedUser = await User.findOne({
     where: {
       id: req.params.id,
@@ -59,7 +58,7 @@ const getUserByID = async (req, res) => {
   }
 };
 
-const putUser = async (req, res, next) => {
+const updateUser = async (req, res, next) => {
   const { id } = req.params;
   const {
     email,
@@ -98,9 +97,18 @@ const putUser = async (req, res, next) => {
   }
 };
 
-const postUser = async (req, res, next) => {
-  const { username,email, password, name, firstname, lastname, street, city, number } =
-    req.body;
+const createUser = async (req, res, next) => {
+  const {
+    username,
+    email,
+    password,
+    name,
+    firstname,
+    lastname,
+    street,
+    city,
+    number,
+  } = req.body;
   try {
     if (!username)
       return res.status(400).json({ msg: "Username de usuario no provisto" });
@@ -109,19 +117,10 @@ const postUser = async (req, res, next) => {
     if (!password)
       return res.status(400).json({ msg: "Password de usuario no provisto" });
 
-    // const findUser = await User.findOne({ where: { userName } });
-    // if (findUser) {
-    // 	return res
-    // 		.status(200)
-    // 		.json({ msg: 'El usuario ya existe en la base de datos' });
-    // }
-
     const findEmail = await User.findOne({ where: { email } });
     if (findEmail) {
       return res.status(200).json({ msg: "Email ya registrado", findEmail });
     }
-
-    // hash contraseña
 
     const [user, created] = await User.findOrCreate({
       where: {
@@ -159,15 +158,15 @@ const deleteUser = async (req, res) => {
     await User.destroy({ where: { id: id } });
 
     return res.status(200).json("User deleted");
-  } catch (err) {
-    return res.status(500).send(`User could not be deleted (${err})`);
+  } catch (error) {
+    return res.status(500).send(`User could not be deleted (${error})`);
   }
 };
 
 module.exports = {
-  getUser,
-  getUserByID,
-  putUser,
-  postUser,
+  getAllUsers,
+  getUserById,
+  updateUser,
+  createUser,
   deleteUser,
 };
