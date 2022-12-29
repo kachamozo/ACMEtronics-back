@@ -1,10 +1,9 @@
 const { Router } = require("express");
 const router = Router();
-const loginController = require('./../Controllers/login');
+const { loginUser, profileUser } = require("./../Controllers/login");
 
-router.post('/login', loginController.authTokenRouterLog)
+router.post("/login", loginUser);
 
-router.get('/profile', loginController.authTokenRouterPerf)
+router.get("/profile", profileUser);
 
-
-module.exports = router
+module.exports = router;
