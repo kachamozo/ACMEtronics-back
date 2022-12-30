@@ -1,9 +1,9 @@
 const { User, Product } = require("../connection/db");
 
 const getFavorites = async (req, res) => {
-  const { userId } = req.query
+  const { userEmail } = req.query
   const favorites = await User.findOne({
-    where: { id: userId },
+    where: { email: userEmail },
     include: {
       model: Product,
       as: "Favorites",
@@ -15,11 +15,11 @@ const getFavorites = async (req, res) => {
 }
 
 const addFavorite = async (req, res) => {
-  const { userId, productId } = req.query;
+  const { userEmail, productId } = req.query;
 
   try {
     const user = await User.findOne({
-    where: { id: userId },
+    where: { email: userEmail },
     include: {
       model: Product,
       as: "Favorites",
@@ -38,12 +38,12 @@ const addFavorite = async (req, res) => {
 };
 
 const removeFavorite = async (req, res) => {
-  const { userId, productId  } = req.query;
+  const { userEmail, productId  } = req.query;
 
   try {
     const user = await User.findOne({
       where: {
-        id: userId,
+        email: userEmail,
       },
       include: {
         model: Product,
