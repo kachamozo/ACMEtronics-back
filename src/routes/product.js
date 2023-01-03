@@ -6,6 +6,7 @@ const {
   update,
   deleteById,
   createBulk,
+  updateStock,
 } = require("../controllers/product");
 const verifyToken = require("../middleware/verifyToken");
 
