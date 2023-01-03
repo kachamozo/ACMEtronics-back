@@ -24,6 +24,7 @@ const checkout = async (req, res) => {
       res.json({ message: "The payment was not successful" });
     }
   } catch (error) {
+    console.log(error)
     return res.json({ message: error.message });
   }
 };

@@ -105,7 +105,7 @@ const update = async (req, res, next) => {
 			name: name || product.name,
 			brand: brand || product.brand,
 			price: price || product.price,
-			stock: stock || product.stock,
+			stock: stock ? product.stock - stock : product.stock,
 			image: image || product.image,
 			description: description || product.description,
 		});
