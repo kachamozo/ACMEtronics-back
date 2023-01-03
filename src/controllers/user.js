@@ -18,6 +18,7 @@ const getAllUsers = async (req, res) => {
           username: u.username,
           password: u.password,
           admin: u.admin ? u.admin : false,
+          banned: u.banned ? u.banned : false
         };
       });
       await User.bulkCreate(users);
@@ -70,6 +71,7 @@ const updateUser = async (req, res, next) => {
     city,
     number,
     admin,
+    banned
   } = req.body;
 
   try {
@@ -87,6 +89,7 @@ const updateUser = async (req, res, next) => {
       city: city,
       number: number,
       admin: admin,
+      banned: banned,
     });
 
     if (!updateUser)
