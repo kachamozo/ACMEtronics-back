@@ -91,9 +91,15 @@ const create = async (req, res, next) => {
 	}
 };
 
+const getStock = (stock,quantity,productStock) => {
+	if(stock)return stock
+	if(quantity) return productStock - quantity
+	return productStock
+}
+
 const update = async (req, res, next) => {
 	const { id } = req.params;
-	const { name, brand, price, stock, image, description } = req.body;
+	const { name, brand, price, stock, image, description,quantity } = req.body;
 
 	try {
 		if (!id) return res.status(400).json({ msg: 'Id no provisto' });
@@ -105,7 +111,7 @@ const update = async (req, res, next) => {
 			name: name || product.name,
 			brand: brand || product.brand,
 			price: price || product.price,
-			stock: stock || product.stock,
+			stock: getStock(stock,quantity,product.stock),
 			image: image || product.image,
 			description: description || product.description,
 		});
