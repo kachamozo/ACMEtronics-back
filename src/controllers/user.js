@@ -18,7 +18,7 @@ const getAllUsers = async (req, res) => {
           username: u.username,
           password: u.password,
           admin: u.admin ? u.admin : false,
-          banned: u.banned ? u.banned : false
+          banned: u.banned ? u.banned : false,
         };
       });
       await User.bulkCreate(users);
@@ -59,44 +59,74 @@ const getUserById = async (req, res) => {
   }
 };
 
-const updateUser = async (req, res, next) => {
-  const { id } = req.params;
-  const {
-    email,
-    password,
-    name,
-    firstname,
-    lastName,
-    street,
-    city,
-    number,
-    admin,
-    banned
-  } = req.body;
+// const updateUser = async (req, res, next) => {
+//   const { id } = req.params;
+//   const {
+//     email,
+//     password,
+//     name,
+//     firstname,
+//     lastName,
+//     street,
+//     city,
+//     number,
+//     admin,
+//     banned,
+//   } = req.body;
 
+//   try {
+//     if (!id) return res.status(400).json({ msg: "Id no provisto" });
+//     const user = await User.findByPk(id);
+//     if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
+
+//     const updateUser = await user.update({
+//       email: email,
+//       password: password,
+//       name: name,
+//       firstname: firstname,
+//       lastName: lastName,
+//       street: street,
+//       city: city,
+//       number: number,
+//       admin: admin,
+//       banned: banned,
+//     });
+
+//     if (!updateUser)
+//       return res.status(200).json({ msg: "No se pudo actualizar el usuario" });
+//     res.status(201).json({ msg: "Usuario actualizado", usuario: updateUser });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
+const updateUser = async (req, res) => {
   try {
-    if (!id) return res.status(400).json({ msg: "Id no provisto" });
-    const user = await User.findByPk(id);
-    if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
-
-    const updateUser = await user.update({
-      email: email,
-      password: password,
-      name: name,
-      firstname: firstname,
-      lastName: lastName,
-      street: street,
-      city: city,
-      number: number,
-      admin: admin,
-      banned: banned,
+    const selectedUser = await User.findOne({
+      where: {
+        id: req.params.id,
+      },
     });
 
-    if (!updateUser)
-      return res.status(200).json({ msg: "No se pudo actualizar el usuario" });
-    res.status(201).json({ msg: "Usuario actualizado", usuario: updateUser });
+    if (selectedUser) {
+      let data = { ...req.body };
+
+      let keys = Object.keys(data);
+
+      keys.forEach((k) => {
+        selectedUser[k] = data[k];
+      });
+
+      await selectedUser.save();
+
+      res
+        .status(200)
+        .json({ msg: "Usuario actualizado", usuario: selectedUser });
+    } else {
+      res.status(404).json({ msg: "Usuario no encontrado" });
+    }
   } catch (error) {
-    next(error);
+    res.status(500).json({ msg: "Error al actualizar el usuario", error });
   }
 };
 
@@ -151,6 +181,7 @@ const createUser = async (req, res, next) => {
 
 const deleteUser = async (req, res) => {
   const { id } = req.params;
+  console.log(id);
   try {
     const deletedUser = await User.findOne({
       where: {
