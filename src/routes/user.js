@@ -6,9 +6,12 @@ const {
   updateUser,
   createUser,
   deleteUser,
+  getUserByEmail,
 } = require("../controllers/user");
 
 router.get("/", getAllUsers);
+
+router.post("/email", getUserByEmail);
 
 router.post("/", createUser);
 
