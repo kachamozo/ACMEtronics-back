@@ -196,8 +196,24 @@ const deleteUser = async (req, res) => {
     return res.status(500).send(`User could not be deleted (${error})`);
   }
 };
+const getUserByEmail = async (req, res) => {
+  const { email, password } = req.body;
+  console.log(req.body,26)
+  if (!email || !password) return res.status(400);
+
+  try {
+    const searchUser = await User.findOne({
+      where: { email: email, password: password },
+    });
+
+    return res.status(200).send({ searchUser });
+  } catch (err) {
+    return res.sendStatus(401);
+  }
+};
 
 module.exports = {
+  getUserByEmail,
   getAllUsers,
   getUserById,
   updateUser,
