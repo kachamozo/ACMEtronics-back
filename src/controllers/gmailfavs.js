@@ -11,7 +11,8 @@ const getFavorites = async (req, res) => {
       through: { attributes: [] },
     },
   });
-  res.send(favorites)
+  if(favorites)return res.send(favorites)
+  else return res.send('no encontrado')
 }
 
 const addFavorite = async (req, res) => {
