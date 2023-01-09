@@ -36,7 +36,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Product, Category, Gmailuser } = sequelize.models;
+const { User, Product, Category, Gmailuser, Order, OrderUser } =
+  sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
@@ -48,6 +49,19 @@ Product.belongsToMany(Category, {
   through: "Category_Product",
   as: "CategoryProduct",
 });
+Product.belongsToMany(Order, {
+  through: "OrderUser",
+  as: "product_id",
+});
+Order.belongsTo(User);
+Order.belongsToMany(Product, {
+  through: { model: OrderUser },
+  foreignKey: "orderId",
+});
+Order.belongsTo(User);
+User.hasMany(Order, { foreignKey: "userId" });
+User.hasMany(OrderUser, { foreignKey: "userId" });
+OrderUser.belongsTo(Order, { foreignKey: "orderId" });
 
 User.belongsToMany(Product, { through: "User_Product", as: "UserProduct" });
 Product.belongsToMany(User, { through: "User_Product", as: "UserProduct" });
@@ -55,9 +69,14 @@ Product.belongsToMany(User, { through: "User_Product", as: "UserProduct" });
 User.belongsToMany(Product, { through: "User_Favorite", as: "Favorites" });
 Product.belongsToMany(User, { through: "User_Favorite", as: "Favorites" });
 
-
-Gmailuser.belongsToMany(Product, { through: "Gmailuser_Favorite", as: "Gmailfavs" });
-Product.belongsToMany(Gmailuser, { through: "Gmailuser_Favorite", as: "Gmailfavs" });
+Gmailuser.belongsToMany(Product, {
+  through: "Gmailuser_Favorite",
+  as: "Gmailfavs",
+});
+Product.belongsToMany(Gmailuser, {
+  through: "Gmailuser_Favorite",
+  as: "Gmailfavs",
+});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
