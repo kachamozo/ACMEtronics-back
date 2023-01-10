@@ -8,6 +8,7 @@ const login = require('./login')
 const gmailuser = require('./gmailuser')
 const gmailfavs = require('./gmailfavs')
 const orderRouter = require("./order")
+const email = require('./email')
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -26,5 +27,6 @@ router.use("/login", login)
 router.use("/gmailuser", gmailuser)
 router.use("/gmailfavs", gmailfavs)
 router.use('/order', orderRouter);
+router.use('/email', email)
 
 module.exports = router;
