@@ -36,7 +36,9 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
+
 const { User, Product, Category, Gmailuser, Order, OrderUser, Comment } =
+
   sequelize.models;
 
 // Aca vendrian las relaciones
@@ -49,22 +51,9 @@ Product.belongsToMany(Category, {
   through: "Category_Product",
   as: "CategoryProduct",
 });
-Product.belongsToMany(Order, {
-  through: "OrderUser",
-  as: "product_id",
-});
-Order.belongsTo(User);
-Order.belongsToMany(Product, {
-  through: { model: OrderUser },
-  foreignKey: "orderId",
-});
-Order.belongsTo(User);
-User.hasMany(Order, { foreignKey: "userId" });
-User.hasMany(OrderUser, { foreignKey: "userId" });
-OrderUser.belongsTo(Order, { foreignKey: "orderId" });
 
-User.belongsToMany(Product, { through: "User_Product", as: "UserProduct" });
-Product.belongsToMany(User, { through: "User_Product", as: "UserProduct" });
+Order.belongsToMany(Gmailuser, {through: "Gmailuser_Order", as: "GmailuserOrder"})
+Gmailuser.belongsToMany(Order, {through: "Gmailuser_Order", as: "GmailuserOrder"})
 
 User.belongsToMany(Product, { through: "User_Favorite", as: "Favorites" });
 Product.belongsToMany(User, { through: "User_Favorite", as: "Favorites" });

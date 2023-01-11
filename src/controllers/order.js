@@ -1,59 +1,57 @@
 const Router = require("express");
-const { Order, User, Product, OrderLine } = require("../connection/db");
-
-
+const { Order, Gmailuser } = require("../connection/db");
 
 const postOrder = async (req, res, next) => {
-  const { id, status, user_id } = req.body;
-  if ((!id, !status))
-    return res.status(400).json({ message: "incomplete order" });
-    try {
-        
-    
-
-  await Order.create({
-    order_id: id,
-    order_status: status,
-    userId: user_id,
+  const {status, total, items, email} = req.body
+  if ((!email || !status))
+  return res.status(400).json({ message: "incomplete order" });
+  try {
+  const newOrder = await Order.create({status, total, items})
+  const gmailuser = await Gmailuser.findAll({
+    where : {
+      email: email
+    }
   })
-  return res.status(200).send()
-} catch (error) {
-      next(error)  
-} 
+  const orderAdded = await newOrder.addGmailuserOrder(gmailuser)
+  
+  return res.status(200).send(orderAdded)
+  } catch (error) {
+    next(error)  
+  }
+  
 };
 
 //trae todas las ordenes de todos los usuarios
 const getOrder = async (req, res, next) => {
-   await Order.findAll({
+  const allorders = await Order.findAll({
     include: {
-      attributes: ["email"],
-      model: User
-    },
-  })
-    .then((order) => {
-      if (order === null)
-        return res.status(404).json({ message: "No hay ordenes" });
+      model: Gmailuser,
+      as: "GmailuserOrder",
+      attributes: ["email",],
+      through: { attributes: [] },
 
-      return res.status(200).json({ order });
-    })
-    .catch(next);
+    }
+  })
+  if (allorders === null) return res.status(404).json({ message: "No hay ordenes" });
+  return res.send(allorders)
 };
 
 //??Get order by orderId
 
 const getOrderId = async(req, res, next) => {
-  const { orderId } = req.params;
+  const { id } = req.params;
 
   await Order.findAll({
-    attributes: ["id", "status", "userId"],
+    attributes: ["id", "status", "total", "items"],
     where: {
-      id: orderId,
+      id: id,
     },
     include: {
-      attributes: ["name", "price", "image", "id"],
-      model: Product,
+      attributes: ["email"],
+      model: Gmailuser,
+      as: "GmailuserOrder",
       through: {
-        attributes: ["id", "quantity", "total"],
+        attributes: [],
       },
     },
   })
@@ -69,10 +67,11 @@ const putOrder = async (req, res, next) => {
   await Order.findOne({
     where: { id },
     include: {
-      attributes: ["name", "price", "image", "id"],
-      model: Product,
+      attributes: ["email"],
+      model: Gmailuser,
+      as: "GmailuserOrder",
       through: {
-        attributes: ["id", "quantity", "total"],
+        attributes: [],
       },
     },
   })
@@ -96,89 +95,16 @@ const deleteOrder = async (req, res, next) => {
         return res.status(404).json({ message: "Esa orden no existe" });
 
       order.destroy(order).then(() => {
-        return res.status(200).json({ message: "Order eliminada" });
+        return res.status(200).json({ message: "Order deleted" });
       });
     })
     .catch(next);
-};
+}; 
 
-const postOrderUser= async (req, res, next) => {
-  let { userId } = req.params;
-  let { status } = req.body;
-
-  if (status === "shopping_cart") {
-    try {
-      await User.findByPk(userId)
-        .then((user) => {
-          if (!user) {
-            return res.sendStatus(404);
-          }
-          Order.findOrCreate({ where: { status, userId }, raw: true }).then(
-            (order) => {
-              const numOrder = order[0].dataValues
-                ? order[0].dataValues.id
-                : order[0].id;
-              user.addOrder(numOrder).then(() => {
-                return res.status(201).json({ orderId: numOrder });
-              });
-            }
-          );
-        })
-        .catch((err) => {
-          return res.sendStatus(500);
-        });
-    } catch (error) {
-      next(error.message);
-    }
-  } else if (status === "created") {
-   await Order.findOne({
-      where: {
-        userId: userId,
-        status: "shopping_cart",
-      },
-    })
-      .then((order) => {
-        order.status = "created";
-        order
-          .save()
-          .then((order) => {
-            return res.send(order);
-          })
-          .catch((err) => {
-            return res.sendStatus(500);
-          });
-      })
-      .catch((err) => {
-        return res.sendStatus(500);
-      });
-  } else if (status === "processing") {
-    await Order.findOne({
-      where: {
-        userId: userId,
-        status: "created",
-      },
-    })
-      .then((order) => {
-        order.status = "processing";
-        order
-          .save()
-          .then((order) => {
-            return res.send(order);
-          })
-          .catch((err) => {
-            return res.sendStatus(500);
-          });
-      })
-      .catch((err) => {
-        return res.sendStatus(500);
-      });
-  }
-};
 module.exports = {
     postOrder,
-    postOrderUser,
-    deleteOrder,
-    putOrder,
-    getOrderId,
-    getOrder
+    getOrder, 
+    getOrderId, 
+    putOrder, 
+    deleteOrder
 }
