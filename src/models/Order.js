@@ -20,5 +20,13 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: "shopping_cart",
     },
+    total:
+    {
+      type: DataTypes.INTEGER, 
+      allowNull: false
+    }, 
+    items: {
+      type: DataTypes.ARRAY(DataTypes.ARRAY(DataTypes.TEXT))
+    },
   })
 }
