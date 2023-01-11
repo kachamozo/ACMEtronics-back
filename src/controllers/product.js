@@ -1,5 +1,5 @@
 const { Op } = require('sequelize');
-const { Product, Category } = require('../connection/db');
+const { Product, Category,Comment } = require('../connection/db');
 
 const getAll = async (req, res, next) => {
 	const { name } = req.query;
@@ -10,9 +10,14 @@ const getAll = async (req, res, next) => {
 			where,
 			include: [
 				{
-					model: Category,
+					model:Category,
 					as: 'CategoryProduct',
 					attributes: ['id', 'name'],
+					through: { attributes: [] },
+				},
+				{
+					model:Comment,
+					attributes: ['text'],
 					through: { attributes: [] },
 				},
 			],
@@ -36,6 +41,11 @@ const getById = async (req, res, next) => {
 					model: Category,
 					as: 'CategoryProduct',
 					attributes: ['id', 'name'],
+					through: { attributes: [] },
+				},
+				{
+					model:Comment,
+					attributes: ['text'],
 					through: { attributes: [] },
 				},
 			],
@@ -99,7 +109,7 @@ const getStock = (stock,quantity,productStock) => {
 
 const update = async (req, res, next) => {
 	const { id } = req.params;
-	const { name, brand, price, stock, image, description,quantity } = req.body;
+	const { name, brand, price, stock, image, description, quantity, comments } = req.body;
 
 	try {
 		if (!id) return res.status(400).json({ msg: 'Id no provisto' });
@@ -114,6 +124,7 @@ const update = async (req, res, next) => {
 			stock: getStock(stock,quantity,product.stock),
 			image: image || product.image,
 			description: description || product.description,
+			comments: comments || product.comments
 		});
 
 		if (!updateProduct)
