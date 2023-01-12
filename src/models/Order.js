@@ -26,7 +26,7 @@ module.exports = (sequelize) => {
       allowNull: false
     }, 
     items: {
-      type: DataTypes.ARRAY(DataTypes.ARRAY(DataTypes.TEXT))
+      type: (DataTypes.ARRAY(DataTypes.TEXT))
     },
   })
 }

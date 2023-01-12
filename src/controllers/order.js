@@ -59,6 +59,27 @@ const getOrderId = async(req, res, next) => {
     .catch((error) => next(error.message));
 };
 
+const getOrderByUser = async(req, res, next) => {
+  const { email } = req.params;
+
+  await Order.findAll({
+    attributes: ["id", "status", "total", "items"],
+    where: {
+      email: email,
+    },
+    include: {
+      attributes: ["email"],
+      model: Gmailuser,
+      as: "GmailuserOrder",
+      through: {
+        attributes: [],
+      },
+    },
+  })
+    .then((order) => res.json(order))
+    .catch((error) => next(error.message));
+};
+
 //Actualiza orden por id
 const putOrder = async (req, res, next) => {
   let { id } = req.params;
@@ -105,6 +126,7 @@ module.exports = {
     postOrder,
     getOrder, 
     getOrderId, 
+    getOrderByUser,
     putOrder, 
     deleteOrder
 }
