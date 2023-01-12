@@ -15,9 +15,10 @@ const getAllGmailusers = async (req, res) => {
 
 const createGmailuser = async (req, res, next) => {
     const {given_name, family_name, email, nickname} = req.body
-    try {
-      const findEmail = await Gmailuser.findOne({ where: { email } });
+    const findEmail = await Gmailuser.findOne({ where: { email } });
         if (findEmail) {return res.status(200).json({ msg: "Email ya registrado", findEmail });}
+    try {
+      
       const created =  await Gmailuser.findOrCreate({ 
       where : {
         given_name: given_name,
