@@ -1,15 +1,26 @@
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY } = process.env;
 
-const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-  {
-    logging: false, // set to console.log to see the raw SQL queries
-    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-  }
-);
+// const sequelize = new Sequelize(
+//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+//   {
+//     logging: false, // set to console.log to see the raw SQL queries
+//     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+//   }
+// );
+
+const sequelize = new Sequelize(DB_DEPLOY, {
+  logging: false, // set to console.log to see the raw SQL queries
+  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  dialectOptions: {
+    ssl: {
+      require: true,
+    },
+  },
+});
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
@@ -38,7 +49,6 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Para relacionarlos hacemos un destructuring
 
 const { User, Product, Category, Gmailuser, Order, OrderUser, Comment } =
-
   sequelize.models;
 
 // Aca vendrian las relaciones
@@ -52,8 +62,14 @@ Product.belongsToMany(Category, {
   as: "CategoryProduct",
 });
 
-Order.belongsToMany(Gmailuser, {through: "Gmailuser_Order", as: "GmailuserOrder"})
-Gmailuser.belongsToMany(Order, {through: "Gmailuser_Order", as: "GmailuserOrder"})
+Order.belongsToMany(Gmailuser, {
+  through: "Gmailuser_Order",
+  as: "GmailuserOrder",
+});
+Gmailuser.belongsToMany(Order, {
+  through: "Gmailuser_Order",
+  as: "GmailuserOrder",
+});
 
 User.belongsToMany(Product, { through: "User_Favorite", as: "Favorites" });
 Product.belongsToMany(User, { through: "User_Favorite", as: "Favorites" });
@@ -67,10 +83,12 @@ Product.belongsToMany(Gmailuser, {
   as: "Gmailfavs",
 });
 Product.belongsToMany(Comment, {
-  through: "Product_comments",});
+  through: "Product_comments",
+});
 
-  Comment.belongsToMany(Product, {
-  through: "Product_comments",});
+Comment.belongsToMany(Product, {
+  through: "Product_comments",
+});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
