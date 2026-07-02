@@ -1,42 +1,39 @@
 {
-	"name": "server",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"engines": {
-    "node": "20.x"
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -L",
+    "test": "mocha -w ./tests/**/*.spec.js"
   },
-	"scripts": {
-		"start": "nodemon -L",
-		"test": "mocha -w ./tests/**/*.spec.js"
-	},
-	"author": "Henry",
-	"license": "ISC",
-	"engines": {
-		"node": ">=12.18.3",
-		"npm": ">=6.14.6"
-	},
-	"dependencies": {
-		"bcrypt": "^5.1.0",
-		"body-parser": "^1.19.0",
-		"cookie-parser": "^1.4.5",
-		"cors": "^2.8.5",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"ioredis": "^4.19.2",
-		"jose": "^4.11.1",
-		"jsonwebtoken": "^8.5.1",
-		"morgan": "^1.10.0",
-		"nodemailer": "^6.8.0",
-		"pg": "^8.5.1",
-		"sequelize": "^6.3.5",
-		"stripe": "^11.4.0"
-	},
-	"devDependencies": {
-		"chai": "^4.2.0",
-		"mocha": "^8.2.1",
-		"nodemon": "^2.0.6",
-		"supertest": "^6.0.1",
-		"supertest-session": "^4.1.0"
-	}
+  "author": "Henry",
+  "license": "ISC",
+  "engines": {
+    "node": "20.x",
+    "npm": ">=6.14.6"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "ioredis": "^4.19.2",
+    "jose": "^4.11.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.8.0",
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5",
+    "stripe": "^11.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.1",
+    "supertest-session": "^4.1.0"
+  }
 }

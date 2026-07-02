@@ -1,6 +1,6 @@
-const { Sequelize } = require("sequelize");
-const fs = require("fs");
-const path = require("path");
+const { Sequelize } = require('sequelize');
+const fs = require('fs');
+const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY } = process.env;
 
 // const sequelize = new Sequelize(
@@ -17,6 +17,7 @@ const sequelize = new Sequelize(DB_DEPLOY, {
   dialectOptions: {
     ssl: {
       require: true,
+      rejectUnauthorized: false,
     },
   },
 });
@@ -26,13 +27,13 @@ const basename = path.basename(__filename);
 const modelDefiners = [];
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
-fs.readdirSync(path.join(__dirname, "../models"))
+fs.readdirSync(path.join(__dirname, '../models'))
   .filter(
     (file) =>
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+      file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js',
   )
   .forEach((file) => {
-    modelDefiners.push(require(path.join(__dirname, "../models", file)));
+    modelDefiners.push(require(path.join(__dirname, '../models', file)));
   });
 
 // Injectamos la conexion (sequelize) a todos los modelos
@@ -54,40 +55,40 @@ const { User, Product, Category, Gmailuser, Order, OrderUser, Comment } =
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 Category.belongsToMany(Product, {
-  through: "Category_Product",
-  as: "CategoryProduct",
+  through: 'Category_Product',
+  as: 'CategoryProduct',
 });
 Product.belongsToMany(Category, {
-  through: "Category_Product",
-  as: "CategoryProduct",
+  through: 'Category_Product',
+  as: 'CategoryProduct',
 });
 
 Order.belongsToMany(Gmailuser, {
-  through: "Gmailuser_Order",
-  as: "GmailuserOrder",
+  through: 'Gmailuser_Order',
+  as: 'GmailuserOrder',
 });
 Gmailuser.belongsToMany(Order, {
-  through: "Gmailuser_Order",
-  as: "GmailuserOrder",
+  through: 'Gmailuser_Order',
+  as: 'GmailuserOrder',
 });
 
-User.belongsToMany(Product, { through: "User_Favorite", as: "Favorites" });
-Product.belongsToMany(User, { through: "User_Favorite", as: "Favorites" });
+User.belongsToMany(Product, { through: 'User_Favorite', as: 'Favorites' });
+Product.belongsToMany(User, { through: 'User_Favorite', as: 'Favorites' });
 
 Gmailuser.belongsToMany(Product, {
-  through: "Gmailuser_Favorite",
-  as: "Gmailfavs",
+  through: 'Gmailuser_Favorite',
+  as: 'Gmailfavs',
 });
 Product.belongsToMany(Gmailuser, {
-  through: "Gmailuser_Favorite",
-  as: "Gmailfavs",
+  through: 'Gmailuser_Favorite',
+  as: 'Gmailfavs',
 });
 Product.belongsToMany(Comment, {
-  through: "Product_comments",
+  through: 'Product_comments',
 });
 
 Comment.belongsToMany(Product, {
-  through: "Product_comments",
+  through: 'Product_comments',
 });
 
 module.exports = {
