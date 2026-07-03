@@ -50,23 +50,25 @@ To get started with the app, you can follow these steps:
  DB_HOST=localhost
  DB_PORT=5432
  DB_USER=postgres
- DB_PASSWORD=postgres
+ DB_PASSWORD=tu_contraseña_aqui
  DB_NAME=acmetronics
 
  #PostgreSQL producción (serviceweb Neon)
- DB_DEPLOY= postgresql://neondb_owner:npg_Adg8Grso1UPc@ep-broad-queen-atn0py8v.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require
+ DB_DEPLOY=tu_url_aqui
 
  # Stripe
- STRIPE_PUBLISHABLE_KEY=pk_test_51MGiEBJf3Ra7t0LIpbXGmuheCzm64uisAtUjjerxb3LCv7AEkdcfVfUWRlVRWcScZU5oLKXKRHSP45u6LIPRS66y00oG54GCjY
- STRIPE_SECRET_KEY=sk_test_51MGiEBJf3Ra7t0LIFvCJctI1zgUxX7UMhzVjshM1iGjf85KIaelmVXx7S9lOGJk8Y9FmFSFwMqvUZKTNduky8OIm00RiRnTVom
+ STRIPE_PUBLISHABLE_KEY=tu_contraseña_aqui
+ STRIPE_SECRET_KEY=tu_contraseña_aqui
 
  # JWT
- TOKEN_SECRET=secreto
+ TOKEN_SECRET=tu_toke_secreto_aqui
 
  # Email
  EMAIL_HOST=smtp-mail.outlook.com
- EMAIL_USER=acmetronics-shop@outlook.com
- EMAIL_PASS=acme123456*
+ EMAIL_USER=tu_usuario_aqui
+ EMAIL_PASS=tu_contraseña_aqui
+
+ #Copiar todo de render -> environment
 ```
 
 6. **Run the server** with the following command:
