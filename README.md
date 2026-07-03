@@ -108,6 +108,11 @@ To get started with the app, you can follow these steps:
   npm run dev
 ```
 
+13. **To test the application:**
+
+- Use the users available in the `data` folder to login.
+- For testing purchases, use Stripe's test cards. Refer to the [Stripe testing documentation](https://docs.stripe.com/testing?locale=es-419) for valid test card numbers.
+
 ## Features
 
 - User authentication using Auth0.
