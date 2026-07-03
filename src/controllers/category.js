@@ -1,5 +1,5 @@
-const { Op } = require("sequelize");
-const { Category } = require("../connection/db");
+const { Op } = require('sequelize');
+const { Category } = require('../connection/db');
 
 const getAll = async (req, res, next) => {
   const { name } = req.query;
@@ -9,7 +9,7 @@ const getAll = async (req, res, next) => {
     const { count, rows } = await Category.findAndCountAll({ where });
 
     if (!rows.length > 0)
-      return res.status(404).json({ msg: "Categoria no encontrada" });
+      return res.status(404).json({ msg: 'Categoria no encontrada' });
     res.status(200).json({ count: count, categories: rows });
   } catch (error) {
     next(error);
@@ -19,11 +19,11 @@ const getAll = async (req, res, next) => {
 const getById = async (req, res, next) => {
   const { id } = req.params;
   try {
-    if (!id) return res.status(400).json({ msg: "Id no provisto" });
+    if (!id) return res.status(400).json({ msg: 'Id no provisto' });
     const category = await Category.findByPk(id);
     if (!category)
-      return res.status(404).json({ msg: "Categoria no encontrada" });
-    res.status(200).json({ msg: "Categoria encontrada", category });
+      return res.status(404).json({ msg: 'Categoria no encontrada' });
+    res.status(200).json({ msg: 'Categoria encontrada', category });
   } catch (error) {
     next(error);
   }
@@ -33,15 +33,15 @@ const create = async (req, res, next) => {
   const name = req.body.name;
   try {
     if (!name)
-      return res.status(400).json({ msg: "Nombre de categoria no provisto" });
+      return res.status(400).json({ msg: 'Nombre de categoria no provisto' });
     const category = await Category.findOne({ where: { name } });
     if (category) {
       return res
         .status(200)
-        .json({ msg: "La categoria ya existe en la base de datos" });
+        .json({ msg: 'La categoria ya existe en la base de datos' });
     }
     const newCategory = await Category.create({ name });
-    res.status(201).json({ msg: "Categoria creada", category: newCategory });
+    res.status(201).json({ msg: 'Categoria creada', category: newCategory });
   } catch (error) {
     next(error);
   }
@@ -51,20 +51,20 @@ const update = async (req, res, next) => {
   const { id } = req.params;
   const { name } = req.body;
   try {
-    if (!id) return res.status(400).json({ msg: "Id no provisto" });
+    if (!id) return res.status(400).json({ msg: 'Id no provisto' });
     const category = await Category.findByPk(id);
     if (!category)
-      return res.status(404).json({ msg: "Categoria no encontrada" });
+      return res.status(404).json({ msg: 'Categoria no encontrada' });
     const updatedCategory = await category.update({
       name: name || category.name,
     });
     if (!updatedCategory)
       return res
         .status(200)
-        .json({ msg: "No se pudo actualizar la categoria" });
+        .json({ msg: 'No se pudo actualizar la categoria' });
     res
       .status(201)
-      .json({ msg: "Categoria actualizada", category: updatedCategory });
+      .json({ msg: 'Categoria actualizada', category: updatedCategory });
   } catch (error) {
     next(error);
   }
@@ -73,24 +73,26 @@ const update = async (req, res, next) => {
 const deleteById = async (req, res, next) => {
   const { id } = req.params;
   try {
-    if (!id) return res.status(400).json({ msg: "Id no provisto" });
+    if (!id) return res.status(400).json({ msg: 'Id no provisto' });
     const category = await Category.findByPk(id);
     if (!category)
-      return res.status(404).json({ msg: "Categoria no encotrada" });
+      return res.status(404).json({ msg: 'Categoria no encotrada' });
     const deleteCategory = await category.destroy();
     if (!deleteCategory)
-      return res.status(200).json({ msg: "No se pudo eliminar categoria" });
-    res.status(201).json({ msg: "Categoria eliminada", category });
+      return res.status(200).json({ msg: 'No se pudo eliminar categoria' });
+    res.status(201).json({ msg: 'Categoria eliminada', category });
   } catch (error) {
     next(error);
   }
 };
 
+/*Se recomienda hacer el product/bulk ->Ya no es necesario este paso si llamamos al endpoint de product/bulk 
+el tambien crea las categorias*/
 const createBulk = async (req, res, next) => {
   const { categories } = req.body;
   try {
     if (!categories.length > 0)
-      return res.status(400).json({ msg: "Lista de categorias no provistas" });
+      return res.status(400).json({ msg: 'Lista de categorias no provistas' });
 
     const { count, rows } = await Category.findAndCountAll();
     if (count > 0)
@@ -100,10 +102,10 @@ const createBulk = async (req, res, next) => {
     if (!newCategories.length > 0)
       return res
         .status(200)
-        .json({ msg: "No se pudo crear la lista de categorias" });
+        .json({ msg: 'No se pudo crear la lista de categorias' });
     res
       .status(201)
-      .json({ msg: "Lista de categorias creadas", categories: newCategories });
+      .json({ msg: 'Lista de categorias creadas', categories: newCategories });
   } catch (error) {
     next(error);
   }

@@ -1,19 +1,20 @@
-const { Op } = require("sequelize");
-const { User, Product } = require("../connection/db");
+const { Op } = require('sequelize');
+const { User, Product } = require('../connection/db');
 
+/* Los usuarios se crean automaticamente get->localhost:8000/user */
 const getAllUsers = async (req, res) => {
   const { name } = req.query;
   let userTable = await User.findAll({
-    order: [["id", "ASC"]],
+    order: [['id', 'ASC']],
   });
   if (userTable.length > 1) return res.send(userTable);
   if (userTable.length === 0) {
     try {
-      let users = require("../data/users.json");
+      let users = require('../data/users.json');
       users = users.map((u) => {
         return {
-          firstname: u.name["firstname"],
-          lastname: u.name["lastname"],
+          firstname: u.name['firstname'],
+          lastname: u.name['lastname'],
           email: u.email,
           username: u.username,
           password: u.password,
@@ -24,7 +25,7 @@ const getAllUsers = async (req, res) => {
       await User.bulkCreate(users);
 
       userTable = await User.findAll({
-        order: [["id", "ASC"]],
+        order: [['id', 'ASC']],
       });
 
       return res.send(userTable);
@@ -41,7 +42,7 @@ const getAllUsers = async (req, res) => {
 
       if (specificUser.length > 0) return res.status(200).send(specificUser);
 
-      return res.status(404).send("No such User");
+      return res.status(404).send('No such User');
     }
   }
 };
@@ -121,12 +122,12 @@ const updateUser = async (req, res) => {
 
       res
         .status(200)
-        .json({ msg: "Usuario actualizado", usuario: selectedUser });
+        .json({ msg: 'Usuario actualizado', usuario: selectedUser });
     } else {
-      res.status(404).json({ msg: "Usuario no encontrado" });
+      res.status(404).json({ msg: 'Usuario no encontrado' });
     }
   } catch (error) {
-    res.status(500).json({ msg: "Error al actualizar el usuario", error });
+    res.status(500).json({ msg: 'Error al actualizar el usuario', error });
   }
 };
 
@@ -144,15 +145,15 @@ const createUser = async (req, res, next) => {
   } = req.body;
   try {
     if (!username)
-      return res.status(400).json({ msg: "Username de usuario no provisto" });
+      return res.status(400).json({ msg: 'Username de usuario no provisto' });
     if (!email)
-      return res.status(400).json({ msg: "Email de usuario no provisto" });
+      return res.status(400).json({ msg: 'Email de usuario no provisto' });
     if (!password)
-      return res.status(400).json({ msg: "Password de usuario no provisto" });
+      return res.status(400).json({ msg: 'Password de usuario no provisto' });
 
     const findEmail = await User.findOne({ where: { email } });
     if (findEmail) {
-      return res.status(200).json({ msg: "Email ya registrado", findEmail });
+      return res.status(200).json({ msg: 'Email ya registrado', findEmail });
     }
 
     const [user, created] = await User.findOrCreate({
@@ -172,8 +173,8 @@ const createUser = async (req, res, next) => {
     });
 
     if (!created)
-      return res.status(200).json({ msg: "Usuario encontrado ", user });
-    res.status(201).json({ msg: "Usuario creado", user });
+      return res.status(200).json({ msg: 'Usuario encontrado ', user });
+    res.status(201).json({ msg: 'Usuario creado', user });
   } catch (error) {
     next(error);
   }
@@ -191,14 +192,14 @@ const deleteUser = async (req, res) => {
     if (!deletedUser) return 0;
     await User.destroy({ where: { id: id } });
 
-    return res.status(200).json("User deleted");
+    return res.status(200).json('User deleted');
   } catch (error) {
     return res.status(500).send(`User could not be deleted (${error})`);
   }
 };
 const getUserByEmail = async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body,26)
+  console.log(req.body, 26);
   if (!email || !password) return res.status(400);
 
   try {
