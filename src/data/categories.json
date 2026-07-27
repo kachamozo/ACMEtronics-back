@@ -1,0 +1,22 @@
+{
+	"categories": [
+		{
+			"name": "Smartphones"
+		},
+		{
+			"name": "Laptops"
+		},
+		{
+			"name": "Tablets"
+		},
+		{
+			"name": "E-readers"
+		},
+		{
+			"name": "SmartWatch"
+		},
+		{
+			"name": "Headphones"
+		}
+	]
+}

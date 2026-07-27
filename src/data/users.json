@@ -1,0 +1,135 @@
+[
+    {
+        "address": {
+            "city": "Buenos Aires",
+            "street": "San Juan",
+            "number": 456
+        },
+        "id": 1,
+        "email": "admin@xyz.com",
+        "username": "Admin",
+        "password": "m39rmF$",
+        "admin": true,
+        "name": {
+            "firstname": "Admin",
+            "lastname": "Admin"
+        }
+    },
+    {
+        "address": {
+            "city": "Cordoba",
+            "street": "Av de Mayo",
+            "number": 3847
+        },
+        "id": 2,
+        "email": "molinito@xyz.com",
+        "username": "Marce",
+        "password": "marc25rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Marcelo",
+            "lastname": "Saravia"
+        }
+    },
+    {
+        "address": {
+            "city": "La paz",
+            "street": "La paz ",
+            "number": 53452
+        },
+        "id": 3,
+        "email": "kachamozo@xyz.com",
+        "username": "Kachamozo",
+        "password": "kachamozo25rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Roly",
+            "lastname": "Ochoa"
+        }
+    },
+    {
+        "address": {
+            "city": "Caracas",
+            "street": "Bolivar ",
+            "number": 23454
+        },
+        "id": 4,
+        "email": "yofran@xyz.com",
+        "username": "YoYofran",
+        "password": "Yofran25rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Yofran",
+            "lastname": "Garnier"
+        }
+    },
+    {
+        "address": {
+            "city": "Cordoba",
+            "street": "Corrientes",
+            "number": 78452
+        },
+        "id": 5,
+        "email": "paula@xyz.com",
+        "username": "Pau",
+        "password": "Pau27rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Paula",
+            "lastname": "Kunning"
+        }
+    },
+    {
+        "address": {
+            "city": "Buenos Aires",
+            "street": "Piedras",
+            "number": 65132
+        },
+        "id": 6,
+        "email": "rodrigo@xyz.com",
+        "username": "Rodri",
+        "password": "Rodrig4427rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Rodrigo",
+            "lastname": "Martinez"
+        }
+    },
+
+    {
+        "address": {
+            "city": "Buenos Aires",
+            "street": "Av Santa Fé",
+            "number": 12345
+        },
+        "id": 7,
+        "email": "ayelen@xyz.com",
+        "username": "Aye",
+        "password": "Aye4427rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Ayelen",
+            "lastname": "Montenegro"
+        }
+    },
+    {
+        "address": {
+            "city": "Bogotá",
+            "street": "Bogotá",
+            "number": 554464
+        },
+        "id": 8,
+        "email": "erika@xyz.com",
+        "username": "Eri",
+        "password": "Eri1245rmF$",
+        "admin": false,
+        "name": {
+            "firstname": "Erika",
+            "lastname": "Pineda"
+        }
+    }
+]
+		
+	
+	
+

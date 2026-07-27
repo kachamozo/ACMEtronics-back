@@ -1,0 +1,504 @@
+{
+	"products": [
+		{
+			"name": "iPhone 13 Pro Max",
+			"description": "An ultra-wide angle sensor of 12 megapixels and an angle of 120 °; An improved 12-megapixel telephoto lens also with X3 Optical Zoom and optical stabilization.",
+			"brand": "Apple",
+			"price": 908,
+			"stock": 94,
+			"rating": 4.6,
+			"categories": ["1"],
+			"image": "https://m.media-amazon.com/images/I/61FZC+6hDFL._AC_SL1500_.jpg"
+		},
+		{
+			"name": "iPhone X",
+			"description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+			"brand": "Apple",
+			"price": 249,
+			"stock": 34,
+			"rating": 4.4,
+			"categories": ["1"],
+			"image": "https://m.media-amazon.com/images/I/61xa10dafvL._AC_SL1100_.jpg"
+		},
+		{
+			"name": "Samsung Galaxy S22 Ultra",
+			"description": "It has the brightest screen on the market, an Exynos processor with an AMD GPU, brightest camera sensor",
+			"brand": "Samsung",
+			"price": 1189,
+			"stock": 36,
+			"rating": 4.0,
+			"categories": ["1"],
+			"image": "https://m.media-amazon.com/images/I/71M4DO4SeoL._AC_SL1280_.jpg"
+		},
+		{
+			"name": "Huawei P30",
+			"description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+			"brand": "Huawei",
+			"price": 175,
+			"stock": 32,
+			"rating": 4.1,
+			"categories": ["1"],
+			"image": "https://m.media-amazon.com/images/I/61XM1qbUPUL._AC_SL1000_.jpg"
+		},
+		{
+			"name": "Huawei P50 Pro",
+			"description": "with FHD+ resolution of 1,228 x 2,700 pixels that can be automatically adjusted to reduce (somewhat) consumption, with a refresh rate of up to 120 Hz (also automatic) and a 300 Hz touch sampling frequency..",
+			"brand": "Huawei",
+			"price": 454,
+			"stock": 30,
+			"rating": 4.0,
+			"categories": ["1"],
+			"image": "https://http2.mlstatic.com/D_NQ_NP_974187-MLV52436619734_112022-O.webp"
+		},
+		{
+			"name": "Samsung Galaxy S21 Ultra ",
+			"description": "It has a 6.8-inch Dynamic AMOLED screen at QHD + resolution, 120 Hz refresh rate and Gorilla Glass Victus protection and inside we find the same pair of Snapdragon 888 processors.",
+			"brand": "Samsung",
+			"price": 1440,
+			"stock": 38,
+			"rating": 2.5,
+			"categories": ["1"],
+			"image": "https://http2.mlstatic.com/D_NQ_NP_650271-MLV47534099487_092021-O.webp"
+		},
+		{
+			"name": "Xiaomi Mi 11 Lite ",
+			"description": "It has a 64 MP main sensor with a size of 1/1.97 inches and an f/1.79 aperture. The other important sensor that accompanies it is another classic: an 8 MP wide angle and f/2.2 aperture.",
+			"brand": "Xiaomi",
+			"price": 341,
+			"stock": 34,
+			"rating": 3.3,
+			"categories": ["1"],
+			"image": "https://http2.mlstatic.com/D_NQ_NP_755679-MLV46528024024_062021-O.webp"
+		},
+		{
+			"name": "Xiaomi 12 Lite ",
+			"description": "Xiaomi 12 Lite has an AMOLED panel with FullHD+ resolution, 120 Hz refresh rate and integrated fingerprint reader under the screen, but in this case its diagonal is 6.55 inches, slightly larger than that of the Xiaomi 12 and the Xiaomi 12X.",
+			"brand": "Xiaomi",
+			"price": 416,
+			"stock": 40,
+			"rating": 3.9,
+			"categories": ["1"],
+			"image": "https://http2.mlstatic.com/D_NQ_NP_991013-MLV51294611292_082022-O.webp"
+		},
+		{
+			"name": "iPhone Pro Max 14 ",
+			"description": "6.1-inch and 6.7-inch Super Retina XDR OLED. Storage: 128, 256 and 512 GB on iPhone 14 and 1 TB option on Pro models. Ceramic Shield: stronger than any smartphone glass. Compatibility with MagSafe accessories.",
+			"brand": "Apple",
+			"price": 2400,
+			"stock": 42,
+			"rating": 4.7,
+			"categories": ["1"],
+			"image": "https://http2.mlstatic.com/D_NQ_NP_725885-MLV51817560144_102022-O.webp"
+		},
+		{
+			"name": "Samsung A71",
+			"description": "The Samsung Galaxy A71 arrives to succeed the Galaxy A70 with a 6.7-inch Super AMOLED screen at FHD + resolution. Using an octa-core Snapdragon 730 processor, the Galaxy A71 features 6GB or 8GB RAM variants with 128GB of microSD expandable internal storage space.",
+			"brand": "Samsung",
+			"price": 280,
+			"stock": 35,
+			"rating": 4.2,
+			"categories": ["1"],
+			"image": "https://http2.mlstatic.com/D_NQ_NP_664898-MLV49512628783_032022-O.webp"
+		},
+		{
+			"name": "HP 14-cf2535la plateada natural 14",
+			"description": "Procesador Intel Core i5,Memori RAM de 8GB ,Resolution de 1366x768 px,Video card Intel UHD Graphics 620,Windows 11 Home",
+			"price": 1069,
+			"rating": 3.7,
+			"stock": 123,
+			"brand": "HP",
+			"categories": ["2"],
+			"image": "https://http2.mlstatic.com/D_NQ_NP_744343-MLA51520574552_092022-O.webp"
+		},
+		{
+			"name": "MacBook Pro",
+			"description": "MacBook Pro 2021 with mini-LED display may launch between September, November, IOS",
+			"price": 1749,
+			"rating": 4.5,
+			"stock": 83,
+			"brand": "APPle",
+			"categories": ["2"],
+			"image": "https://i.dummyjson.com/data/products/6/thumbnail.png"
+		},
+		{
+			"name": "Samsung Galaxy Book",
+			"description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched,Windows 10",
+			"price": 1499,
+			"rating": 3.5,
+			"stock": 50,
+			"brand": "Samsung",
+			"categories": ["2"],
+			"image": "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+		},
+		{
+			"name": "Microsoft Surface Laptop 4",
+			"description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen,Windows 11 profesional",
+			"price": 1499,
+			"rating": 4.4,
+			"stock": 68,
+			"brand": "Microsoft Surface",
+			"categories": ["2"],
+			"image": "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
+		},
+		{
+			"name": "Infinix INBOOK",
+			"description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty,Windows 10 Home",
+			"price": 1099,
+			"rating": 3.1,
+			"stock": 96,
+			"brand": "Infinix",
+			"categories": ["2"],
+			"image": "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+		},
+		{
+			"name": "HP Pavilion 15-DK1056WM",
+			"description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+			"price": 1099,
+			"rating": 2.6,
+			"stock": 89,
+			"brand": "HP Pavilion",
+			"categories": ["2"],
+			"image": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+		},
+		{
+			"name": "SAMSUNG Galaxy Book2 Pro",
+			"description": " 8 GB / 512 GB, procesador Intel i5 Core de 12ª generation, Lightweight, model 2022, Windows 11 Home",
+			"price": 1049,
+			"rating": 3.0,
+			"stock": 50,
+			"brand": "Samsung",
+			"categories": ["2"],
+			"image": "https://m.media-amazon.com/images/I/61M-QNJf4pL._AC_SX466_.jpg"
+		},
+		{
+			"name": "Lenovo 2022 Newest Ideapad 3 Laptop",
+			"description": "screen 15.6 HD Touchscreen, 11th Gen Intel Core i3-1115G4 Processor, 8GB DDR4 RAM, 256GB PCIe NVMe SSD, HDMI, Webcam, Wi-Fi 5, Bluetooth, Windows 11 Home, Almond",
+			"price": 959,
+			"rating": 3.7,
+			"stock": 80,
+			"brand": "Lenovo",
+			"categories": ["2"],
+			"image": "https://m.media-amazon.com/images/I/61QGMX0Qy6L._AC_SX679_.jpg"
+		},
+		{
+			"name": "ASUS Vivobook Go 15 L510 Thin",
+			"description": "Light Laptop Computer, 15.6” FHD Display, Intel Celeron N4020 Processor, 4GB RAM, 64GB Storage, Windows 11 Home in S Mode, 1 Year Microsoft 365, Star Black, L510MA-AS02",
+			"price": 250,
+			"rating": 2.5,
+			"stock": 69,
+			"brand": "Asus",
+			"categories": ["2"],
+			"image": "https://m.media-amazon.com/images/I/713WJz2wXLL._AC_SX679_.jpg"
+		},
+		{
+			"name": "ASUS VivoBook 15 F515 Laptop",
+			"description": "15.6â€ FHD Display, Intel i3-1115G4 CPU, 8GB DDR4 RAM, 128GB SSD, Windows 11 Home in S Mode, Slate Grey, F515EA-AH34",
+			"price": 450,
+			"rating": 4.3,
+			"stock": 140,
+			"brand": "Asus",
+			"categories": ["2"],
+			"image": "https://m.media-amazon.com/images/I/71GKXeMFy-L._AC_SX679_.jpg"
+		},
+		{
+			"name": "Apple iPad pro 12.9-inch",
+			"description": "Astonishing performance. Incredibly advanced displays. Superfast wireless connectivity. Next-level Apple Pencil capabilities. Powerful new features in IpadOS. The ultimate iPad experience.",
+			"brand": "Apple",
+			"price": 1099,
+			"stock": 20,
+			"rating": 4.5,
+			"categories": ["3"],
+			"image": "https://m.media-amazon.com/images/I/81rxOSprYqL._AC_SX522_.jpg"
+		},
+		{
+			"name": "Apple iPad pro 11-inch",
+			"description": "Astonishing performance. Incredibly advanced displays. Superfast wireless connectivity. Next-level Apple Pencil capabilities. Powerful new features in IpadOS. The ultimate iPad experience.",
+			"brand": "Apple",
+			"price": 799,
+			"stock": 11,
+			"rating": 4.8,
+			"categories": ["3"],
+			"image": "https://m.media-amazon.com/images/I/71zMz9YT0qL._AC_SX522_.jpg"
+		},
+		{
+			"name": "Apple iPad Air",
+			"description": "iPad Air lets you immerse yourself in whatever you’re reading, watching, or creating. The 10.9-inch Liquid Retina display features advanced technologies like True Tone, P3 wide color, and an antireflective coating.",
+			"brand": "Apple",
+			"price": 599,
+			"stock": 8,
+			"rating": 4.2,
+			"categories": ["3"],
+			"image": "https://m.media-amazon.com/images/I/61k05QwLuML._AC_SX522_.jpg"
+		},
+		{
+			"name": "Apple iPad 10th generation",
+			"description": "The all-new colorful iPad for the things you do every day",
+			"brand": "Apple",
+			"price": 449,
+			"stock": 13,
+			"rating": 4.3,
+			"categories": ["3"],
+			"image": "https://m.media-amazon.com/images/I/61hZrbHRMWL._AC_SX522_.jpg"
+		},
+		{
+			"name": "Apple iPad mini 8.3-inch",
+			"description": "The magic of iPad in the palm of your hand.",
+			"brand": "Apple",
+			"price": 499,
+			"stock": 5,
+			"rating": 3.7,
+			"categories": ["3"],
+			"image": "https://m.media-amazon.com/images/I/612kqMovpRL._AC_SX522_.jpg"
+		},
+		{
+			"name": "Samsung galaxy Tab S8 Ultra 14.6-inch",
+			"description": "Get lost in what you love and unleash your imagination with an ultra-large sAMOLED tablet that's the first of its kind. Your movies and content come to life in vivid detail like never before on an expansive 14.6's AMOLED screen. Now you have the power to game or edit videos in ultra-smooth clarity, thanks to a 120Hz refresh rate. You'll feel closer to the action when you hear every thrilling detail on quad speakers and rich Dolby Atmos surround sound tuned by AKG.",
+			"brand": "Samsung",
+			"price": 1449,
+			"stock": 8,
+			"rating": 4.4,
+			"categories": ["3"],
+			"image": "https://m.media-amazon.com/images/I/91gNvwvpGBL._AC_SX466_.jpg"
+		},
+		{
+			"name": "Samsung galaxy Tab S8+",
+			"description": "Meet SAMSUNG Galaxy Tab S8+, a premium tablet that helps you get more done on the go. Whether you’re working, catching up on your favorite series on your commute or chilling with your favorite game, get it all done smoothly and quickly no matter where you are with superfast Wi-Fi 6E.",
+			"brand": "Samsung",
+			"price": 1249,
+			"stock": 5,
+			"rating": 4.0,
+			"categories": ["3"],
+			"image": "https://m.media-amazon.com/images/I/81XE3+Sjc6L._AC_SX466_.jpg"
+		},
+		{
+			"name": "Samsung galaxy Tab S8",
+			"description": "Meet SAMSUNG Galaxy Tab S8, a top-of-the-line tablet designed to help you get more out of your day, wherever you happen to be. Take that video call for work at a coffee shop. Lose yourself in your favorite music videos at the park. Whatever you’re doing, make the day yours with an impressive but surprisingly portable 11' LCD display that’s easy on the eyes, giving you plenty of space to get things done no matter where you are.",
+			"brand": "Samsung",
+			"price": 1049,
+			"stock": 6,
+			"rating": 3.2,
+			"categories": ["3"],
+			"image": "https://m.media-amazon.com/images/I/617J+71AoRL._AC_SX466_.jpg"
+		},
+		{
+			"name": "Kindle Paperwhite (16 GB) – Now with a 6.8' display and adjustable warm light - Without Lockscreen Ads",
+			"description": "Kindle Paperwhite is thin, lightweight, and travels easily so you can enjoy your favorite books at any time. With our signature 300 ppi glare-free Paperwhite display—now 10% brighter at its max setting—you can read in any light. And now, a single battery charge via USB-C lasts up to 10 weeks. Battery life may vary depending on use.",
+			"brand": "Amazon",
+			"price": 169,
+			"stock": 45,
+			"rating": 5.0,
+			"categories": ["4"],
+			"image": "https://m.media-amazon.com/images/I/61P+vrvFZ9L._AC_SL1000_.jpg"
+		},
+		{
+			"name": "Kindle Scribe (32 GB), the first Kindle for reading and writing, with a 10.2' 300 ppi Paperwhite display, includes Premium Pen",
+			"description": "With a 10.2' 300 ppi glare-free Paperwhite display, Kindle Scribe is perfect for reading and writing, even in direct sunlight. The large display gives you room to take notes and journal, and makes it easy to adjust font size and margin width for improved reading comfort.",
+			"brand": "Amazon",
+			"price": 390,
+			"stock": 10,
+			"rating": 4.8,
+			"categories": ["4"],
+			"image": "https://m.media-amazon.com/images/I/71Gu7Pu6VsL._AC_SX679_.jpg"
+		},
+		{
+			"name": "Practical Metal ",
+			"description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+			"brand": "Apple",
+			"price": 800,
+			"stock": 35,
+			"rating": 4.7,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=772"
+		},
+		{
+			"name": "Maximiliano Tito",
+			"description": "Maximiliano",
+			"brand": "Tito",
+			"price": 25,
+			"stock": 18,
+			"rating": 3.2,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=5457"
+		},
+		{
+			"name": "Sleek Cotton Pants",
+			"description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+			"brand": "Brandon",
+			"price": 956,
+			"stock": 23,
+			"rating": 3.7,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=5436"
+		},
+		{
+			"name": "Handcrafted Plastic Keyboard",
+			"description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+			"brand": "Apollotech",
+			"price": 721,
+			"stock": 17,
+			"rating": 3.3,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=3744"
+		},
+		{
+			"name": "Generic Fresh Chips",
+			"description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+			"brand": "Nagasaki",
+			"price": 923,
+			"stock": 12,
+			"rating": 4.3,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=936"
+		},
+		{
+			"name": "Gorgeous Concrete Salad",
+			"description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+			"brand": "Gorgeous",
+			"price": 652,
+			"stock": 21,
+			"rating": 4.5,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=235"
+		},
+		{
+			"name": "Handmade Soft Ball",
+			"description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+			"brand": "Pells",
+			"price": 619,
+			"stock": 11,
+			"rating": 2.9,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=625"
+		},
+		{
+			"name": "Awesome Rubber Pizza",
+			"description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+			"brand": "Rubber",
+			"price": 945,
+			"stock": 34,
+			"rating": 3.9,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=5116"
+		},
+		{
+			"name": "Fantastic Rubber Chips",
+			"description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+			"brand": "Huawei",
+			"price": 776,
+			"stock": 20,
+			"rating": 4.1,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=4389"
+		},
+		{
+			"name": "Fantastic Granite",
+			"description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+			"brand": "Xiaomi",
+			"price": 164,
+			"stock": 7,
+			"rating": 4.3,
+			"categories": ["5"],
+			"image": "https://api.lorem.space/image/watch?w=640&h=480&r=1224"
+		},
+		{
+			"name": "Panasonic ErgoFit Wired Earbuds",
+			"description": "In-Ear Headphones with Microphone and Call Controller, Ergonomic Custom-Fit Earpieces (S/M/L), 3.5mm Jack for Phones and Laptops - RP-TCM125-K (Black)",
+			"brand": "Panasonic",
+			"price": 13,
+			"stock": 18,
+			"rating": 4.5,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/51JGpYkmEUL._AC_SX466_.jpg"
+		},
+		{
+			"name": "Sony MDRXB55AP Wired Extra Bass Earbud",
+			"description": "Headphones/Headset with Mic for Phone Call. Listen to everything with the impressively deep sound of EXTRA BASS™. The MDR-XB55AP In-ear Headphones are designed to pack a punch with 12mm neodymium driver units and Powered Bass Duct++ technology, perfect for low-end focused music. Easily take high-quality hands-free calls and switch tracks with the integrated inline remote and mic.",
+			"brand": "Sony",
+			"price": 21,
+			"stock": 13,
+			"rating": 4.5,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/41czWN1OClL._AC_SX466_.jpg"
+		},
+		{
+			"name": "Skullcandy Crusher Evo Wireless Over-Ear Bluetooth Headphones",
+			"description": "Skullcandy Crusher Evo Wireless Over-Ear Bluetooth Headphones for iPhone and Android with Mic / 40 Hour Battery Life / Extra Bass Tech / Best for Music, School, Workouts, and Gaming - Grey.",
+			"brand": "Skullcandy",
+			"price": 198,
+			"stock": 7,
+			"rating": 4.8,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/71eYKV5d4TL._AC_SX466_.jpg"
+		},
+		{
+			"name": "Sony WH-1000XM4 Wireless Headphones",
+			"description": "Sony WH-1000XM4 Wireless Premium Noise Canceling Overhead Headphones with Mic for Phone-Call and Alexa Voice Contro",
+			"brand": "Sony",
+			"price": 239,
+			"stock": 15,
+			"rating": 4.7,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/51SKmu2G9FL._AC_SX466_.jpg"
+		},
+		{
+			"name": "Philips H4205 On-Ear Wireless Headphones",
+			"description": "Get rolling with Philips H4205 On-Ear Wireless Headphones. One press of the BASS boost button sends deep impactful notes thundering through your ears. Thanks to 32mm drivers, you get rich, detailed sound and crystal clear calls. Adjust volume, take calls, and command your voice assistant by pressing the multifunction button on the ear cups. The cushioned headband is light and adjustable, so you barely feel any pressure on your ears.",
+			"brand": "Philips",
+			"price": 24,
+			"stock": 22,
+			"rating": 3.9,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/71WdPCSOq+L._AC_SX466_.jpg"
+		},
+		{
+			"name": "Philips A4216 Wireless Sports Headphones",
+			"description": "With Philips A4216 Wireless Sports Headphones, you never have to hold yourself back. Whether you’re sweating it out at the gym or enjoying a laid-back weekend at the beach, these Go series headphones are up to the challenge. ",
+			"brand": "Philips",
+			"price": 69,
+			"stock": 15,
+			"rating": 4.4,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/61s56hIZm9S._AC_SX466_.jpg"
+		},
+		{
+			"name": "Sony WF-1000XM4 Wireless Earbud Headphones",
+			"description": "Industry-leading noise canceling bluetooth earbuds with the new Integrated Processor V1. Exceptional sound quality with new Integrated Processor V1 and supporting LDAC codec.Crystal-clear call quality, beamforming microphone and a bone-conduction sensor provide clear voice detection even in noisy environments. Speak-to-chat technology automatically reduces volume during conversations.",
+			"brand": "Sony",
+			"price": 147,
+			"stock": 7,
+			"rating": 4.3,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/51d-gdDTTGL._AC_SX466_.jpg"
+		},
+		{
+			"name": "Belkin SoundForm Mini Kids Wireless Headphones",
+			"description": "Belkin SoundForm Mini Kids Wireless Headphones with Built in Microphone, On Ear Headsets Girls and Boys For Online Learning, Travel Compatible with iPhones, iPads, Galaxy and more-Pink, No Case",
+			"brand": "Belkin",
+			"price": 34,
+			"stock": 5,
+			"rating": 4.6,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/61TEUuvaOsL._AC_SX466_.jpg"
+		},
+		{
+			"name": "JVC Black Flat and Foldable Colorful Flats On Ear Headphone",
+			"description": "The JVC HAS160 FLATS are stylish, compact headphones with a slim headband and sleek, soft ear pads that rest on the ear. The earpieces pivot so that the headphone can lie flat, making them ideal for listeners who want a lightweight, easily packable headphone, but who prefer a headband/on-the-ear style. ",
+			"brand": "JVC",
+			"price": 16,
+			"stock": 3,
+			"rating": 4.4,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/71+60E2I7xL._AC_SY879_.jpg"
+		},
+		{
+			"name": "JBL Tune 660NC: Wireless On-Ear Headphones",
+			"description": "With the Tune 660NC Noise Cancelling headphones, you'll get great sound, noise-free! Enjoy JBL Pure Bass Sound for up to 55 hours with BT only and 44 hours with ANC and then recharge in a flash (just 5 minutes for 2 extra hours of battery). Super light and flat foldable, they'll fit anywhere and be ready to light up your day.",
+			"brand": "JBL",
+			"price": 214,
+			"stock": 15,
+			"rating": 4.6,
+			"categories": ["6"],
+			"image": "https://m.media-amazon.com/images/I/61ka51jcC5L._AC_SX466_.jpg"
+		}
+	]
+}
